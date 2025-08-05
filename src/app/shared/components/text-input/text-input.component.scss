@@ -1,0 +1,44 @@
+.form-validation-password-messages.password-strength-messages {
+  font-size: 0.8rem;
+  margin: var(--marginSm) 0;
+
+  > * {
+    padding-right: var(--paddingLg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--muted-text);
+    padding-top: 0.5rem;
+
+    &:before {
+      position: absolute;
+      right: 0;
+      font-size: 0.5rem;
+      font-family: bootstrap-icons;
+      content: "\F287";
+      color: var(--muted-text);
+      transition: (--transition);
+    }
+  }
+
+  div.invalid-message {
+    color: var(--error);
+    &:before {
+      content: "\F287";
+      color: var(--error);
+    }
+  }
+
+  div.valid-message {
+    padding-right: var(--paddingMd);
+    color: var(--success);
+    &:before {
+      position: absolute;
+      right: -0.5rem;
+      font-size: 1.1rem;
+      font-family: bootstrap-icons;
+      content: "\F633";
+      color: var(--success);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.read-me-container{
+    height: 100dvh;
+    background-color: var(--gray-light-10);
+    .main-title{
+        background-color: var(--gray-light-10);
+        padding: var(--paddingLg);
+    }
+    .read-me-texts{
+        background-color: #fff;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+
+}

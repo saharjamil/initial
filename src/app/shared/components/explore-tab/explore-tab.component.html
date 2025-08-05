@@ -1,0 +1,39 @@
+<div class="tabular-container bordered-box">
+    <div class="chrome-tabs" >
+      <div class="chrome-tabs-content" >
+        <div #tabElement class="chrome-tab" [class.closable]="tab.closable" *ngFor="let tab of tabsService.getTabs(key) | async; let i = index" [class.active]="tab.active" (click)="!tab.active && onSelectTab(tab) ">
+          <app-svg-icon [name]="tab.icon" [size]="18" *ngIf="tab.icon"></app-svg-icon>
+          <!-- <i class="bi {{tab.icon}}  tab-icon" *ngIf="tab.icon"></i> -->
+          <div class="tab-title">{{ tab.title }}</div>
+          <div role="button" class="close-tab" *ngIf="tab.closable" (click)="tabsService.closeTab(key,tab.id,this.tabContentViewContainerRef)"><app-svg-icon [name]="'close'" [size]="20"></app-svg-icon></div>
+        </div>
+      </div>
+      <div class="show-tabs-list-btn" #triggerButton *ngIf="tabsService.getTabs(key).value.length>1" (click)="showTabsListPanel($event)"><app-svg-icon [name]="'alt-arrow-down'" [size]="20"></app-svg-icon></div>
+      <div class="chrome-tabs-bottom-bar"></div>
+    </div>
+    <div class="explore-tab-content">
+      <ng-container #tabContentRef></ng-container>
+    </div>
+</div>
+<ng-template #tabsListTemplate>
+  <app-expandable-panel ClickOutside [excludeElement]="triggerButton.nativeElement" (clickOutside)="closePanel()"  [minWidth]="250"  [borderColor]="'var(--nutral-10)'" [content]="tabsListTemplateContent" [position]="tabsListPanelPosition" *ngIf="showTabsListFlag && tabsService.getTabs(key).value.length>1"></app-expandable-panel>
+</ng-template>
+<ng-template #tabsListTemplateContent>
+  <div class="action-menu">
+    <ng-container *ngFor="let tab of tabsService.getTabs(key) | async ; let i = index" >
+      <div class="item" (click)="!tab.active && onSelectTab(tab)">
+        <div class="title">
+          <app-svg-icon [name]="tab.icon" *ngIf="tab.icon" [size]="18"></app-svg-icon>
+          <div class="tab-title">{{ tab.title }}</div>
+        </div>
+        <div role="button" class="close-tab ms-2" *ngIf="tab.closable" (click)="tabsService.closeTab(key,tab.id,this.tabContentViewContainerRef)"><app-svg-icon [name]="'close'"></app-svg-icon></div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>
+<ng-container *ngTemplateOutlet="tabsListTemplate"></ng-container>
+
+   
+  
+
+  

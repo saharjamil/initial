@@ -1,0 +1,66 @@
+<div [class.form-label-group]="!animatedLabel" [class.animated-label]="animatedLabel" [class.form-group]="animatedLabel" [class.valid]="textInput.valid && textInput.touched && textInput.value">
+    <div class="icon-container" *ngIf="iconName">
+        <app-svg-icon [name]="iconName" [size]="20"></app-svg-icon>
+    </div>
+    <label class="placeholder-lable form-label" [for]="inputId">{{label}}</label>
+    <input 
+        #textInput="ngModel"
+        [id]="inputId"
+        [name]="inputId"
+        class="form-control"
+        [type]="maskType === 'password' ? (passwordVisible ? 'text' : 'password') : 'text'"
+        [class.ltr]="maskType == 'cellphone' || maskType == 'email' || maskType == 'IP'"
+        [required]="isRequired"
+        [(ngModel)]="value" 
+        [placeholder]="placeholder"
+        [persianLettersOnly]="maskType === 'none' && persianLettersOnly"
+        [maskito]="maskType == 'cellphone' ? { mask: setting.cellphoneMask } : (maskType == 'email' ? setting.emailMask : null)"
+        [emailValidator]="maskType == 'email'"
+        [mobileValidator]="maskType == 'cellphone'"
+        [ipv4Validator]="maskType == 'IP'"
+        [passwordValidator]="maskType == 'password'"
+        (ngModelChange)="handleInputChange($event)"
+        showPasswordStrengthMessages
+        (blur)="onBlur()"
+        autocomplete="off"
+    />
+        <div class="password-toggle me-3" *ngIf="maskType === 'password'" (click)="togglePasswordVisibility()">
+        <app-svg-icon [name]="passwordVisible ? 'eye' : 'eye-closed'" [size]="20"></app-svg-icon>
+    </div>
+</div>
+
+<div *ngIf="submitted && textInput?.invalid " class="form-validation-messages">
+    <div *ngIf="textInput.errors?.['required']">{{setting.requiredInputMessage}}</div>
+    <div *ngIf="textInput.errors?.['emailInvalid'] && maskType == 'email'">{{setting.invalidEmail}}</div>
+    <div *ngIf="textInput.errors?.['ipv4Invalid'] && maskType == 'IP'">فرمت IP نامعتبر است</div>
+    <div *ngIf="textInput.errors?.['mobileInvalid'] && maskType == 'cellphone'">شماره موبایل نامعتبر است</div>
+</div>
+
+<!-- PasswordStrengthMessages -->
+<div  class="form-validation-password-messages password-strength-messages" 
+     [class.invalid-message]="textInput?.invalid && textInput?.touched" 
+     [class.valid-message]="textInput?.valid && textInput?.touched"
+     *ngIf="maskType === 'password' && showPasswordStrengthMessages && textInput?.invalid ">
+
+    <div [class.invalid-message]="textInput.errors?.['minlength']"
+         [class.valid-message]="!textInput.errors?.['minlength'] && textInput.value">
+        رمز عبور باید حداقل {{ textInput.errors?.['minlength']?.requiredLength || 8 }} کاراکتر باشد.
+    </div>
+    <div [class.invalid-message]="textInput.errors?.['hasDigit']"
+         [class.valid-message]="!textInput.errors?.['hasDigit'] && textInput.value">
+        رمز عبور باید شامل حداقل یک عدد باشد.
+    </div>
+        <div [class.invalid-message]="textInput.errors?.['hasUpperCase']"
+         [class.valid-message]="!textInput.errors?.['hasUpperCase'] && textInput.value">
+        رمز عبور باید شامل حداقل یک حرف بزرگ باشد.
+    </div>
+    <div [class.invalid-message]="textInput.errors?.['hasLowerCase']" 
+         [class.valid-message]="!textInput.errors?.['hasLowerCase'] && textInput.value">
+        رمز عبور باید شامل حداقل یک حرف کوچک باشد.
+    </div>
+    <div [class.invalid-message]="textInput.errors?.['hasSpecialChar']"
+         [class.valid-message]="!textInput.errors?.['hasSpecialChar'] && textInput.value">
+        رمز عبور باید شامل حداقل یک علامت خاص باشد (!#$%...).
+    </div>
+
+</div>
