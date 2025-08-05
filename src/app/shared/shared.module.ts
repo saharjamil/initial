@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlockUIModule } from 'ng-block-ui';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+//Services
+import {CookieService} from 'ngx-cookie-service';
 //Directives
 import { ClickOutsideDirective } from './directives/click-out-side.directive';
 import { RightClickDirective } from './directives/right-click.directive';
@@ -125,6 +126,7 @@ import { SearchComponent } from './components/search/search.component';
     CardComponent,
     SearchComponent
   ],
+  providers:[CookieService]
   
 })
 export class SharedModule { }

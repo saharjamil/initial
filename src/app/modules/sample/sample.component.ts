@@ -23,6 +23,7 @@ import { ICarouselItem } from '../../core/interfaces/carousel-item.interface';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ICardActionConfig } from '../../core/interfaces/card-action-config';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CookieService } from 'ngx-cookie-service';
 const URL = "";
 export class mockDataViewModel{
   ID: number;
@@ -76,9 +77,9 @@ export class SampleComponent {
   stepperItems: StepperViewModel[] = [];
    verticalStepperItems: StepperViewModel[] = [];
   @ViewChild('stepperTemplateRef', {static:false}) stepperTemplateRef!: TemplateRef<any>;
-  constructor(public helperService: HelperService, private cdr: ChangeDetectorRef, private modalService:NgbModal) { }
+  constructor(public helperService: HelperService, private cdr: ChangeDetectorRef, private modalService:NgbModal, private cookieService:CookieService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { console.log(this.cookieService.get('token')) }
   ngAfterViewInit() {
     this.verticalStepperItems= [
         { ID: 1, Title: 'درخواست‌ها', TitleEn:'Requests', Icon: 'clipboard-text', IsActive: false, Condition: true, Component: SampleListComponent },
