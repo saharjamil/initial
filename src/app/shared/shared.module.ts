@@ -27,6 +27,8 @@ import { EmailValidatorDirective } from './directives/email-validator.directive'
 import { PasswordValidatorDirective } from './directives/password-validator.directive';
 
 //Components
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 import { PersianCalendarComponent } from './components/persian-calendar/persian-calendar.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { ExploreTabComponent } from './components/explore-tab/explore-tab.component';
@@ -61,7 +63,9 @@ import { SearchComponent } from './components/search/search.component';
     NoDataComponent,
     SwitcherComponent,
     CardComponent,
-    SearchComponent
+    SearchComponent,
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     NgbModule,

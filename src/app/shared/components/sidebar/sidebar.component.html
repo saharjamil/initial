@@ -1,0 +1,50 @@
+
+<div class="sidebar-container" [class.closed]="!collapse && !isMobile" [class.mobile-view]="isMobile">
+    <div class="head" *ngIf="!isMobile">
+        <div class="title">
+            <div class="logo-container">
+                <img src="../../../../assets/images/logo-white.png" />
+            </div>
+            <h6>لورم ایپسوم متن ساختگی</h6>
+        </div>
+        
+    </div>
+    <div class="toggler" (click)="onToggleSidebar()" [class.close]="isMobile">
+            <app-svg-icon [name]="isMobile ? 'close' : 'alt-arrow-right'" [size]="20"></app-svg-icon>
+        </div>
+    <div class="items">
+        <div class="item" [class.has-dropdown]="item.Children.length" [routerLink]="!item.Children.length ? item.Path : null"  [routerLinkActive]="!item.Children.length ? 'active' : ''" [routerLinkActiveOptions]="{exact: true}" *ngFor="let item of sidebar; let i = index" >
+            <div class="content" (click)="item.Children.length && onToggleSubmenu(item)">
+                <div class="title">
+                    <app-svg-icon [name]="item.Icon"></app-svg-icon>
+                    <span class="label">{{item.Title}}</span>
+                </div>
+                <div class="dropdown-icon"  *ngIf="item.Children.length" [class.up]="item.ShowChildren" >
+                    <app-svg-icon [name]="'alt-arrow-down'" [size]="20"></app-svg-icon>
+                </div>
+            </div>
+            <div class="submenu" [@slideDown]="item.ShowChildren ? 'open' : 'close'" [class.open]="item.ShowChildren" *ngIf="item.Children.length" >
+                <div class="dropdown-item" #dropdownItem  (mouseenter)="collapse && onTabHover(dropdownItem)" (mouseleave)="collapse && onMouseLeave(dropdownItem)" *ngFor="let child of item.Children" [routerLink]="child.Path" routerLinkActive="active">
+                    <span class="dropdown-label">{{child.Title}}</span>
+                </div>
+                <div class="line" #line></div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="icon">
+            <app-svg-icon [name]="'user-rounded'" ></app-svg-icon>
+        </div>
+        <div class="foot-content">
+            <div class="profile-info">
+                <div class="right-side">
+                    <div class="name">لورم ایپسوم</div>
+                    <div class="phone">09128797597</div>
+                </div>
+                <div role="button">
+                    <app-svg-icon [name]="'alt-arrow-left'"></app-svg-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

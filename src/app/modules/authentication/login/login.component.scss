@@ -1,0 +1,92 @@
+.auth-container{
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: var(--gray-light-10);
+    .right-side{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .form-container{
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gapMd);
+            padding: var(--paddingXL);
+            .logo-container{
+                display: flex;
+                align-items: center;
+                gap: var(--gapMd);
+                .title{
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+    .left-side{
+        width: 100%;
+        height: 100%;
+        background-color: var(--gray-light-50);
+        .slider-item{
+            width: 100%;
+            height: 100dvh;
+            position: relative;
+            
+            &:after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            img{
+                width: 100%;
+                object-fit: cover;
+                
+            }
+            .slider-content{
+                height: 300px;
+                background-color: rgba(255,255,255,0.1);
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                border-radius: var(--borderRadiusLg);
+                padding: 3rem;
+                color: #fff;
+                z-index: 2;
+                .title{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 2.5rem;
+                }
+                .description{
+                    font-size: 1.15rem;
+                }
+
+            }
+        }
+        
+    }
+}
+
+::ng-deep{
+    .owl-dots{
+            bottom: calc(300px + 2rem);
+            transform: none !important;
+            left: 1.5rem;
+            right: unset !important;
+        }
+}

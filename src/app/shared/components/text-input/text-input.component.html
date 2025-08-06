@@ -2,7 +2,7 @@
     <div class="icon-container" *ngIf="iconName">
         <app-svg-icon [name]="iconName" [size]="20"></app-svg-icon>
     </div>
-    <label class="placeholder-lable form-label" [for]="inputId">{{label}}</label>
+    <label class="placeholder-lable form-label" [for]="inputId"><span>{{label}}</span></label>
     <input 
         #textInput="ngModel"
         [id]="inputId"

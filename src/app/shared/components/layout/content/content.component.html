@@ -1,8 +1,12 @@
 <ngx-simplebar style="max-height: 100dvh;" data-simplebar-direction="rtl">
     <div class="page-content">
-        <!-- <div class="menu-container">منو در این قسمت قرار می گیرد</div> -->
+        <app-header *ngIf="isMobile"></app-header>
         <div class="content-container">
-            <router-outlet></router-outlet>
+            <app-sidebar></app-sidebar>
+            <div class="router-container">
+
+                <router-outlet></router-outlet>
+            </div>
         </div>
         <!-- <div class="footer-container">فوتر در این قسمت قرار می گیرد</div> -->
     </div>

@@ -1,0 +1,16 @@
+.header-container{
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    width: 100%;
+    border-bottom: 1px solid var(--gray-light-80);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--paddingMd);
+    .logo-container{
+        display: flex;
+        align-items: center;
+        gap: var(--gapSm);
+    }
+}
