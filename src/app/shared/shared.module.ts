@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlockUIModule } from 'ng-block-ui';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgApexchartsModule } from 'ng-apexcharts';
 //Services
 import {CookieService} from 'ngx-cookie-service';
 //Directives
@@ -46,6 +47,7 @@ import { NoDataComponent } from './components/no-data/no-data.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
+import { ApexChartComponent } from './components/apex-chart/apex-chart.component';
 @NgModule({
   declarations: [
     PersianCalendarComponent,
@@ -65,7 +67,8 @@ import { SearchComponent } from './components/search/search.component';
     CardComponent,
     SearchComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ApexChartComponent
   ],
   imports: [
     NgbModule,
@@ -82,6 +85,7 @@ import { SearchComponent } from './components/search/search.component';
     NgPersianDatepickerModule,
     SimplebarAngularModule,
     NgxPaginationModule,
+    NgApexchartsModule,
     
     ClickOutsideDirective,
     RightClickDirective,
@@ -105,6 +109,7 @@ import { SearchComponent } from './components/search/search.component';
     HttpClientModule,
     BlockUIModule,
     NgxPaginationModule,
+    NgApexchartsModule,
     
     ClickOutsideDirective,
     RightClickDirective,
@@ -128,7 +133,8 @@ import { SearchComponent } from './components/search/search.component';
     NoDataComponent,
     SwitcherComponent,
     CardComponent,
-    SearchComponent
+    SearchComponent,
+    ApexChartComponent
   ],
   providers:[CookieService]
   

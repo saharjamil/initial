@@ -260,8 +260,11 @@ input,textarea{
     }
   }
 }
-path,circle{
-    transition: var(--transition);
+svg:not(.apexcharts-svg){
+
+    path,circle{
+        transition: var(--transition);
+    }
 }
 i{
     line-height: 0;
@@ -1873,6 +1876,28 @@ table.custom-table-style {
         &.disabled{
             opacity: 0 !important;
         }
+    }
+}
+
+//custom apexchart tooltip style
+.apexcharts-tooltip{
+    background-color: var(--gray-light-40) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: var(--borderRadiusSm) !important;
+}
+.custom-chart-tooltip-style{
+    min-width: 100px;
+    border-radius: var(--borderRadiusSm);
+    .title,.content{
+        padding: var(--paddingMd);
+        text-align: right;
+        color: var(--body-text);
+        font-weight: 500;
+        
+    }
+    .content{
+        font-size: 1.1rem;
     }
 }
 

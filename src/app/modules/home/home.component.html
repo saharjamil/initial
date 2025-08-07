@@ -1,3 +1,25 @@
+<div class="container-fluid p-0">
+    <div class="row g-2">
+        <div class="col-12">
+            <div class="card">
+                <div class="top-item"></div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card p-3 h-100">
+                <app-apex-chart [chartOptions]="barChartOption"></app-apex-chart>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card p-3 h-100">
+                <app-apex-chart [chartOptions]="pieChartOption"></app-apex-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- <div class="read-me-container">
     <div class="container-fluid h-100">
         <div class="row h-100">
