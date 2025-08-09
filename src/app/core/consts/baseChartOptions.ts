@@ -1,13 +1,13 @@
-import { ChartOptions } from "../types/chart-option";
+import { ApexChartOptions } from "../types/apex-chart-option";
 
-export const BaseChartOptions: ChartOptions = {
+export const BaseChartOptions: ApexChartOptions = {
   series:[],
   chart: {
     type: "bar",
     height: '400px',
     stacked: false,
     redrawOnWindowResize: true,
-    redrawOnParentResize: false,
+    redrawOnParentResize: true,
     toolbar: { show: false },
     zoom: { enabled: false },
     fontFamily: 'IranYekan',

@@ -1,5 +1,5 @@
 
-<div class="sidebar-container" [class.closed]="!collapse && !isMobile" [class.mobile-view]="isMobile">
+<div class="sidebar-container" [class.collapse]="collapse" [class.closed]="!collapse && !isMobile" [class.mobile-view]="isMobile">
     <div class="head" *ngIf="!isMobile">
         <div class="title">
             <div class="logo-container">
@@ -23,6 +23,7 @@
                 </div>
             </div>
             <div class="submenu" [@slideDown]="item.ShowChildren ? 'open' : 'close'" [class.open]="item.ShowChildren" *ngIf="item.Children.length" >
+                <div class="menu-title">{{item.Title}}</div>
                 <div class="dropdown-item" #dropdownItem  (mouseenter)="collapse && onTabHover(dropdownItem)" (mouseleave)="collapse && onMouseLeave(dropdownItem)" *ngFor="let child of item.Children" [routerLink]="child.Path" routerLinkActive="active">
                     <span class="dropdown-label">{{child.Title}}</span>
                 </div>

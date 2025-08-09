@@ -15,11 +15,16 @@
                 <app-apex-chart [chartOptions]="pieChartOption"></app-apex-chart>
             </div>
         </div>
+        <div class="col-lg-4">
+            <div class="card p-3 h-100">
+
+                <app-chartjs [chartType]="'doughnut'" [chartjsOptions]="charjsOptions" (chartClickEvent)="onChartClick($event)"></app-chartjs>
+                <app-chartjs [chartType]="'bar'" [chartjsOptions]="chartjsBarChart"></app-chartjs>
+            </div>
+        </div>
     </div>
 </div>
-
-
-
+  
 <!-- <div class="read-me-container">
     <div class="container-fluid h-100">
         <div class="row h-100">

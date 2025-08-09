@@ -18,7 +18,7 @@ import {
   ApexResponsive
 } from 'ng-apexcharts';
 
-export type ChartOptions = {
+export type ApexChartOptions = {
   series: ApexAxisChartSeries | ApexNonAxisChartSeries;
   chart: ApexChart;
   xaxis: ApexXAxis;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ChartOptions } from '../../../core/types/chart-option';
+import { ApexChartOptions } from '../../../core/types/apex-chart-option';
 
 @Component({
   selector: 'app-apex-chart',
@@ -8,5 +8,5 @@ import { ChartOptions } from '../../../core/types/chart-option';
   styleUrl: './apex-chart.component.scss'
 })
 export class ApexChartComponent {
-  @Input() chartOptions!: ChartOptions;
+  @Input() chartOptions!: ApexChartOptions;
 }

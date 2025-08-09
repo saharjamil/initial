@@ -12,7 +12,6 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         height: '*',
         opacity: 1,
         visibility:'visible',
-        marginTop: '1.5rem'
       })),
       state('close', style({
         height: '0px',

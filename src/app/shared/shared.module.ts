@@ -15,6 +15,8 @@ import { BlockUIModule } from 'ng-block-ui';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { BaseChartDirective } from 'ng2-charts';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 //Services
 import {CookieService} from 'ngx-cookie-service';
 //Directives
@@ -48,6 +50,7 @@ import { SwitcherComponent } from './components/switcher/switcher.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
 import { ApexChartComponent } from './components/apex-chart/apex-chart.component';
+import { ChartjsComponent } from './components/chartjs/chartjs.component';
 @NgModule({
   declarations: [
     PersianCalendarComponent,
@@ -68,7 +71,8 @@ import { ApexChartComponent } from './components/apex-chart/apex-chart.component
     SearchComponent,
     SidebarComponent,
     HeaderComponent,
-    ApexChartComponent
+    ApexChartComponent,
+    ChartjsComponent
   ],
   imports: [
     NgbModule,
@@ -95,6 +99,7 @@ import { ApexChartComponent } from './components/apex-chart/apex-chart.component
     MobileValidatorDirective,
     EmailValidatorDirective,
     PasswordValidatorDirective,
+    BaseChartDirective
   ],
   exports: [
     NgbModule,
@@ -119,6 +124,7 @@ import { ApexChartComponent } from './components/apex-chart/apex-chart.component
     MobileValidatorDirective,
     EmailValidatorDirective,
     PasswordValidatorDirective,
+    BaseChartDirective,
     
     PersianCalendarComponent,
     SvgIconComponent,
@@ -134,9 +140,10 @@ import { ApexChartComponent } from './components/apex-chart/apex-chart.component
     SwitcherComponent,
     CardComponent,
     SearchComponent,
-    ApexChartComponent
+    ApexChartComponent,
+    ChartjsComponent
   ],
-  providers:[CookieService]
+  providers:[CookieService, provideCharts(withDefaultRegisterables())]
   
 })
 export class SharedModule { }
