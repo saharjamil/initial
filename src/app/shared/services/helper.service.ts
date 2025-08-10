@@ -8,6 +8,9 @@ import { IExpandablePanelPostion } from '../../core/interfaces/expandable-panel-
   providedIn: 'root',
 })
 export class HelperService{
+  static getCSSVar(arg0: string): string | import("chart.js/dist/types/utils")._DeepPartialObject<CanvasGradient> | import("chart.js/dist/types/utils")._DeepPartialObject<CanvasPattern> | undefined {
+      throw new Error("Method not implemented.");
+  }
  
   constructor() {}
 
@@ -101,6 +104,25 @@ export class HelperService{
   calcTopExpandablePanelPosition(domRect: DOMRect): IExpandablePanelPostion {
     const expandablePanelPosition: IExpandablePanelPostion = {bottom:window.innerHeight - domRect.top + 5, right :  window.innerWidth - domRect.right};
     return expandablePanelPosition
+  }
+  getCSSVar(name: string): string {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(name)
+    .trim();
+  }
+
+  getChartColors() {
+    return [this.getCSSVar('--primary'), this.getCSSVar('--secondary'),"#4E79A7", // Blue
+    "#76B7B2", // Teal
+    "#EDC948", // Yellow
+    "#BAB0AC" , // Gray
+    "#59A14F", // Green
+    "#F28E2B", // Orange
+    "#E15759", // Reda
+    "#B07AA1", // Purple
+    "#FF9DA7", // Pink
+      "#9C755F", // Brown
+    ]
   }
 }
 

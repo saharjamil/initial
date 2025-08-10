@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { ActiveElement, ChartConfiguration, ChartEvent, ChartOptions, ChartType } from 'chart.js';
+import { ActiveElement, ChartConfiguration, ChartEvent, ChartOptions } from 'chart.js';
 import { ChartjsOption } from '../../../core/types/chartjs-option';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -12,7 +12,7 @@ import { BaseChartDirective } from 'ng2-charts';
 export class ChartjsComponent {
   @ViewChild('BaseChartDirective') chart?: BaseChartDirective;
   @Input() chartType: 'line' | 'bar' | 'doughnut' | 'radar' | 'pie' | 'polarArea' | 'bubble' | 'scatter'   = 'bar';
-
+  @Input() width?:number = 100
   @Input() chartjsOptions!: ChartjsOption;
 
   @Output() chartClickEvent = new EventEmitter<ActiveElement[]>();

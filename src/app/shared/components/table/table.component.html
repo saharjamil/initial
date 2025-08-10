@@ -41,5 +41,5 @@
             </tbody>
         </table>
     </div>
-    <app-pagination [id]="'pager'" [pageNumber]="pageNumber" [pageSize]="pageSize" (onPaginationChange)="onPaginateChange($event)"></app-pagination>
+    <app-pagination *ngIf="showPagination" [id]="'pager'" [pageNumber]="pageNumber" [pageSize]="pageSize" (onPaginationChange)="onPaginateChange($event)"></app-pagination>
 </div>

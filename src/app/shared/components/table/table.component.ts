@@ -18,6 +18,7 @@ export class TableComponent{
   @Input() mainActions: TableMainActionsConfig<any> = {};
   @Input() customActions: Array<ITableActionConfig<any>> = [];
   @Input() pageSize: number = AppSetting.pageSize;
+  @Input() showPagination: boolean = true;
   @Output() onDisable:EventEmitter<any> = new EventEmitter<any>();
   @Output() buttonAction: EventEmitter<ITableActionEvent<any>> = new EventEmitter<ITableActionEvent<any>>();
   setting: AppSetting = new AppSetting();

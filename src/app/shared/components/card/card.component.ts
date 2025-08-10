@@ -20,6 +20,7 @@ export class CardComponent<T> {
   @Input() actionMenuType: 'expandable' | 'button' = 'expandable';
   @Input() showCardTitleIcon: boolean = true;
   @Input() cardTitleIcon: string = '';
+  @Input() showSearchIcon?: boolean = true;
   @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('actionMenuTrigger') actionMenuTrigger!: ElementRef;
   actionMenuPosition: IExpandablePanelPostion = {}

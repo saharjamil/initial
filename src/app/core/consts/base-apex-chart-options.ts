@@ -1,6 +1,6 @@
 import { ApexChartOptions } from "../types/apex-chart-option";
 
-export const BaseChartOptions: ApexChartOptions = {
+export const BaseApexChartOptions: ApexChartOptions = {
   series:[],
   chart: {
     type: "bar",
@@ -90,7 +90,7 @@ export const BaseChartOptions: ApexChartOptions = {
     forceNiceScale: true,
     min: 0,
     decimalsInFloat: 0,
-    tickAmount: 5,
+    // tickAmount: 5,
     labels: {
       style: { fontFamily: "var(--fontFamily)", fontSize: "0.95rem" },
       offsetX: -10,

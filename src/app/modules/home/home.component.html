@@ -1,27 +1,81 @@
 <div class="container-fluid p-0">
     <div class="row g-2">
         <div class="col-12">
-            <div class="card">
-                <div class="top-item"></div>
+            <div class="top-item row gap-2 m-0">
+                <div class="item card col">
+                    <div class="title-container">
+                        <span class="title">لورم ایپسوم متن ساختگی</span>
+                        <span class="description">لورم ایپسوم</span>
+                    </div>
+                    <div class="chart-container">
+                    <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
+                    </div>
+                </div>
+                <div class="item card col">
+                    <div class="title-container">
+                        <span class="title">لورم ایپسوم متن ساختگی</span>
+                        <span class="description">لورم ایپسوم</span>
+                    </div>
+                    <div class="chart-container">
+                        <app-chartjs [width]="40" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
+                    </div>
+                </div>
+                <div class="item card col">
+                    <div class="title-container">
+                        <span class="title">لورم ایپسوم متن ساختگی</span>
+                        <span class="description">لورم ایپسوم</span>
+                    </div>
+                    <div class="chart-container">
+                    <app-apex-chart  [chartOptions]="smallLineChart"></app-apex-chart>
+                    </div>
+                </div>
+                <div class="item card col">
+                    <div class="title-container">
+                        <span class="title">لورم ایپسوم متن ساختگی</span>
+                        <span class="description">لورم ایپسوم</span>
+                    </div>
+                    <div class="chart-container">
+                    <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
+                    </div>
+                </div>
+                <div class="item card col">
+                    <div class="title-container">
+                        <span class="title">لورم ایپسوم متن ساختگی</span>
+                        <span class="description">لورم ایپسوم</span>
+                    </div>
+                    <div class="chart-container">
+                        <app-chartjs [width]="40" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-4">
             <div class="card p-3 h-100">
                 <app-apex-chart [chartOptions]="barChartOption"></app-apex-chart>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
+            <div class="card p-3 h-100">
+                <app-chartjs [chartType]="'doughnut'" [chartjsOptions]="charjsOptions" (chartClickEvent)="onChartClick($event)"></app-chartjs>
+            </div>
+        </div>
+        <div class="col-lg-3">
+
+            <app-card [actionMenuType]="'button'" [actionMenuItems]="activityActionMenuItems" [showSearchIcon]="false" [cardTitle]="'فعالیت‌ها'">
+                <app-table [columns]="[{Key: 'Title' , Title: 'عنوان'}]" [showPagination]="false" [data]="activityTableData" [customActions]="activityTableActions" (buttonAction)="handleTableAction($event)"></app-table>
+            </app-card>
+        </div>
+        <!-- <div class="col-lg-4">
             <div class="card p-3 h-100">
                 <app-apex-chart [chartOptions]="pieChartOption"></app-apex-chart>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="card p-3 h-100">
-
-                <app-chartjs [chartType]="'doughnut'" [chartjsOptions]="charjsOptions" (chartClickEvent)="onChartClick($event)"></app-chartjs>
                 <app-chartjs [chartType]="'bar'" [chartjsOptions]="chartjsBarChart"></app-chartjs>
             </div>
-        </div>
+        </div> -->
+        
     </div>
 </div>
   
