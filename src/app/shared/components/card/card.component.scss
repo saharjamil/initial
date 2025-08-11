@@ -48,13 +48,15 @@
     padding-right: var(--paddingMd);
     margin-right: var(--marginSm);
     position: relative;
-    
-    &:before{
-        content: '';
-        width: 1px;
-        height: 2rem;
-        background-color: var(--gray-light-80);
-        position: absolute;
-        right: 0;
+    &.has-divider{
+
+        &:before{
+            content: '';
+            width: 1px;
+            height: 2rem;
+            background-color: var(--gray-light-80);
+            position: absolute;
+            right: 0;
+        }
     }
 }

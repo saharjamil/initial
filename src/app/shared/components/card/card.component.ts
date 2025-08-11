@@ -17,10 +17,15 @@ export class CardComponent<T> {
   @Input() data: any;
   @Input() actionMenuItems: ICardActionConfig<T>[] = [];
   @Input() actionMenuBorderColor?: string = 'var(--primary-20)';
-  @Input() actionMenuType: 'expandable' | 'button' = 'expandable';
+  @Input() actionMenuType: 'expandable' | 'button' | 'none' = 'none';
   @Input() showCardTitleIcon: boolean = true;
   @Input() cardTitleIcon: string = '';
   @Input() showSearchIcon?: boolean = true;
+  @Input() showHeader: boolean = true;
+  @Input() background?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error';
+  @Input() backgroundType?: 'highlight';
+  @Input() hasFullHeight: boolean = true;
+  
   @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('actionMenuTrigger') actionMenuTrigger!: ElementRef;
   actionMenuPosition: IExpandablePanelPostion = {}

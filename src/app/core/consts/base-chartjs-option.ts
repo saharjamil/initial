@@ -34,7 +34,7 @@ export const BaseChartjsOption: ChartjsOption = {
             },
             legend: {
                 rtl: true,
-                
+                position: 'bottom',
                 // maxHeight:10,
                 labels: {
                     // pointStyle: 'rect',
@@ -87,8 +87,7 @@ export const BaseChartjsOption: ChartjsOption = {
                 borderColor: '#fff',
                 borderWidth: 5,
                 borderRadius: 15,
-            
-                
+
             },
             bar: {
                 maxBarThickness: 30,

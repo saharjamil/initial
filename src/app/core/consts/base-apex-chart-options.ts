@@ -78,9 +78,11 @@ export const BaseApexChartOptions: ApexChartOptions = {
       rotateAlways: false,
       hideOverlappingLabels: false,
       trim: true,
+      
       style: {
         fontFamily: "var(--fontFamily)",
         fontSize: "0.9rem",
+        cssClass: 'custom-apex-chart-xaxis-style',
       },
     },
 
@@ -108,10 +110,10 @@ export const BaseApexChartOptions: ApexChartOptions = {
     position: "top",
     horizontalAlign: "center",
     fontFamily: "var(--fontFamily)",
-    fontSize: "14",
+    fontSize: "14px",
     fontWeight: 500,
     labels: { colors: "var(--nutral-50)" },
-    markers: { strokeWidth: 4,shape:'circle' },
+    markers: { strokeWidth: 3, shape:'circle'  },
     itemMargin: { horizontal: 10 },
   },
   tooltip: {

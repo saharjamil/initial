@@ -259,6 +259,55 @@ input,textarea{
       font-weight: 600;
     }
   }
+
+  &.primary{
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    &.highlight{
+        background-color: var(--primaryLight);
+        color: var(--onPrimaryLight);
+    }
+  }
+  &.secondary{
+    background-color: var(--secondary);
+    color: var(--onSecondary);
+    &.highlight{
+        background-color: var(--warningLight);
+        color: var(--onWarningLight);
+    }
+  }
+  &.error{
+    background-color: var(--error);
+    color: var(--onError);
+    &.highlight{
+        background-color: var(--errorLight);
+        color: var(--onErrorLight);
+    }
+  }
+  &.warning{
+    background-color: var(--warning);
+    color: var(--onWarning);
+    &.highlight{
+        background-color: var(--warningLight);
+        color: var(--onWarningLight);
+    }
+  }
+  &.success{
+    background-color: var(--success);
+    color: var(--onSuccess);
+    &.highlight{
+        background-color: var(--successLight);
+        color: var(--onSuccessLight);
+    }
+  }
+  &.info{
+    background-color: var(--info);
+    color: var(--onInfo);
+    &.highlight{
+        background-color: var(--infoLight);
+        color: var(--onInfoLight);
+    }
+  }
 }
 svg:not(.apexcharts-svg){
 
@@ -1900,6 +1949,12 @@ table.custom-table-style {
         font-size: 1.1rem;
     }
 }
+.custom-apex-chart-xaxis-style{
+    tspan{
+        direction: rtl;
+    }
+}
+
 
 
 

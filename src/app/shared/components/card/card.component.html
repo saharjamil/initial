@@ -1,17 +1,17 @@
-<div class="card">
-    <div class="card-header">
+<div class="card {{background}} {{backgroundType}}" [class.h-100]="hasFullHeight">
+    <div class="card-header" *ngIf="showHeader">
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center gap-2">
                 <app-svg-icon [name]="cardTitleIcon" *ngIf="showCardTitleIcon && cardTitleIcon"></app-svg-icon>
                 {{cardTitle}}
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center" >
                 
                 <app-search *ngIf="showSearchIcon" (onSearch)="onSearchSelected($event)"></app-search>
                 <button class="btn btn-icon d-flex align-items-center justify-content-center ms-2" *ngIf="showPageNumber" [ngbTooltip]="'صفحه‌ی ' + pageNumber" tooltipClass="custom-tooltip-style" placement="bottom" triggers="hover" >
                     <i class="bi bi-info-lg" style="font-size: 1.2rem;"></i>
                 </button>
-                <div class="action-buttons-container" *ngIf="actionMenuType == 'button'">
+                <div class="action-buttons-container" [class.has-divider]="showSearchIcon" *ngIf="actionMenuType == 'button'">
                     <button [class.flex-row-reverse]="action.leftIcon" *ngFor="let action of actionMenuItems" [ngbTooltip]="action.type == 'iconic' ? action.title : ''" tooltipClass="custom-tooltip-style" placement="bottom" triggers="hover" class="d-flex align-items-center btn" [ngClass]="['btn', action.type === 'iconic' ? 'btn-icon' : '', 'btn-' + (action.buttonColorType ? action.buttonColorType + '-' : '') + (action.type == 'text' || action.buttonColor ? action.buttonColor || 'primary' : ''), 'btn-' + (action.type == 'text' ? action.buttonSize || 'sm' : ''), 'order-' + (action.order ? action.order : '')]" (click)="action.action()">
                             <span *ngIf="action.icon">
                                 <app-svg-icon  [name]="action.icon" [size]="action.type == 'iconic' || action.buttonSize == 'xs' || action.buttonSize == 'sm' ? 20 :  24"></app-svg-icon>
@@ -22,7 +22,7 @@
                     </button>
                 </div>
                 <div role="button" #actionMenuTrigger (click)="onShowMenu($event)" style="transform: rotate(90deg);"  *ngIf="actionMenuType == 'expandable'">
-                    <app-svg-icon [name]="'menu-dots'" style="pointer-events: none;"></app-svg-icon>
+                    <app-svg-icon [name]="'menu-dots'" style="pointer-events: none;" [size]="20"></app-svg-icon>
                 </div>
             </div>
         </div>

@@ -11,6 +11,9 @@ import { ResultViewModel } from '../../core/viewModels/result-view-model';
 import { MessageViewModel } from '../../core/viewModels/message-view-model';
 import { ITableActionConfig } from '../../core/interfaces/table-action-config.interface';
 import { ITableActionEvent } from '../../core/interfaces/table-action-event.interface';
+
+import { CalendarData } from '../../core/data/calendar-data';
+import { CalendarFilterDateViewModel } from '../../core/viewModels/calendar-filter-date-view-model';
 @Component({
   selector: 'app-home',
   standalone:false,
@@ -41,7 +44,17 @@ export class HomeComponent {
           data: [31, 40, 28]
       },
     ],
-   labels:['سری اول','سری دوم','سری سوم']
+    chart: {
+      ...BaseApexChartOptions.chart,
+      height: 'auto'
+    },
+    labels: ['سری اول', 'سری دوم', 'سری سوم'],
+    legend: {
+      ...BaseApexChartOptions.legend,
+      horizontalAlign: 'left',
+      offsetX: -30,
+      itemMargin: { horizontal: 5, vertical:0 },
+   }
   }
   pieChartOption: ApexChartOptions = {
     ...BaseApexChartOptions,
@@ -264,7 +277,50 @@ export class HomeComponent {
           }
         }
       },
+      
     }
+  }
+
+  chartPrimary: ApexChartOptions = {
+    ...BaseApexChartOptions,
+    series: [{ name: '', data: [60, 35, 45] }],
+    colors: ['var(--primary-30)', 'var(--primary-50)'],
+    chart: {
+      ...BaseApexChartOptions.chart,
+      height: '200',
+      
+    },
+    plotOptions: {
+      bar:{
+        ...BaseApexChartOptions.plotOptions.bar,
+        columnWidth: 55,
+        distributed:true
+        
+      }
+
+    },
+    grid: {
+      xaxis: {
+        lines: {
+          show:false
+        }
+      }
+    },
+    labels:['کاربر 1', 'کاربر 2', 'کاربر 3'],
+    yaxis: {
+      show: false,
+      tickAmount: 3,
+    },
+    legend: {
+      ...BaseApexChartOptions.legend,
+      markers: {
+        ...BaseApexChartOptions.legend.markers,
+        strokeWidth: 3
+
+        }
+    }
+    
+    
   }
 
   onChartClick(event:any) {
@@ -290,6 +346,7 @@ export class HomeComponent {
     title: 'جزئیات',
     icon: 'alt-arrow-left',
     type: 'text',
+    buttonColorType: 'highlight',
     leftIcon:true,
     buttonSize: 'xs',
     action: (customAction: any) => {
@@ -298,5 +355,15 @@ export class HomeComponent {
   }]
   handleTableAction(event: ITableActionEvent<any>) {
     event.action(event.data)
+  }
+
+  calendarData: CalendarData = new CalendarData();
+  calendarLoadingData: boolean = false;
+  onNavigateToDate(event: CalendarFilterDateViewModel) {
+    this.calendarLoadingData = true;
+    console.log(event.Month);
+    setTimeout(() => {
+      this.calendarLoadingData = false;
+    },100)
   }
 }
