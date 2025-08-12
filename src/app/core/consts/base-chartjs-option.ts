@@ -1,5 +1,4 @@
 import { ChartjsOption } from "../types/chartjs-option";
-import { HelperService } from "../../shared/services/helper.service";
 const fontFamily = 'Peyda';
 
 export const BaseChartjsOption: ChartjsOption = {
@@ -52,8 +51,6 @@ export const BaseChartjsOption: ChartjsOption = {
                     
                 }
             }
-            
-            
         },
         elements: {
             bar: {
@@ -81,6 +78,7 @@ export const BaseChartjsOption: ChartjsOption = {
                 }
             }
         },
+        aspectRatio: 1,
         datasets: {
             doughnut: {
                 hoverBorderWidth: 2,
@@ -96,7 +94,7 @@ export const BaseChartjsOption: ChartjsOption = {
                 
             }
         },
-
-        
+        responsive: true,
+        maintainAspectRatio: false
     }
 }

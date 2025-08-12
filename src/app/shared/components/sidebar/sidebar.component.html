@@ -1,5 +1,5 @@
 
-<div class="sidebar-container" [class.collapse]="collapse" [class.closed]="!collapse && !isMobile" [class.mobile-view]="isMobile">
+<div class="sidebar-container" [class.collapse]="collapse || isMobile" [class.closed]="!collapse && !isMobile" [class.mobile-view]="isMobile">
     <div class="head" *ngIf="!isMobile">
         <div class="title">
             <div class="logo-container">

@@ -1,57 +1,78 @@
 <div class="grid-container">
     <div class="top">
-        <div class="top-item row gap-2 m-0">
-                <div class="item card col">
-                    <div class="title-container">
-                        <span class="title">لورم ایپسوم متن ساختگی</span>
-                        <span class="description">لورم ایپسوم</span>
+        <div class="top-item row g-2 m-0 flex-wrap">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+                <app-card [showHeader]="false">
+                    <div class="item">
+                        <div class="title-container">
+                            <span class="title">لورم ایپسوم متن ساختگی</span>
+                            <span class="description">لورم ایپسوم</span>
+                        </div>
+                        <div class="chart-container">
+                            <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
+                        </div>
                     </div>
-                    <div class="chart-container">
-                    <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
+                </app-card>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+                <app-card [showHeader]="false">
+                    <div class="item">
+                        <div class="title-container">
+                            <span class="title">لورم ایپسوم متن ساختگی</span>
+                            <span class="description">لورم ایپسوم</span>
+                        </div>
+                        <div class="chart-container">
+                            <app-chartjs [width]="90" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
+                        </div>
                     </div>
-                </div>
-                <div class="item card col">
-                    <div class="title-container">
-                        <span class="title">لورم ایپسوم متن ساختگی</span>
-                        <span class="description">لورم ایپسوم</span>
+                </app-card>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+                <app-card [showHeader]="false">
+                    <div class="item">
+                        <div class="title-container">
+                            <span class="title">لورم ایپسوم متن ساختگی</span>
+                            <span class="description">لورم ایپسوم</span>
+                        </div>
+                        <div class="chart-container">
+                            <app-apex-chart  [chartOptions]="smallLineChart"></app-apex-chart>
+                        </div>
                     </div>
-                    <div class="chart-container">
-                        <app-chartjs [width]="40" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
+                </app-card>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+                <app-card [showHeader]="false">
+                    <div class="item">
+                        <div class="title-container">
+                            <span class="title">لورم ایپسوم متن ساختگی</span>
+                            <span class="description">لورم ایپسوم</span>
+                        </div>
+                        <div class="chart-container">
+                        <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
+                        </div>
                     </div>
-                </div>
-                <div class="item card col">
-                    <div class="title-container">
-                        <span class="title">لورم ایپسوم متن ساختگی</span>
-                        <span class="description">لورم ایپسوم</span>
+                </app-card>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+                <app-card [showHeader]="false">
+                    <div class="item">
+                        <div class="title-container">
+                            <span class="title">لورم ایپسوم متن ساختگی</span>
+                            <span class="description">لورم ایپسوم</span>
+                        </div>
+                        <div class="chart-container">
+                            <app-chartjs [width]="90" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
+                        </div>
                     </div>
-                    <div class="chart-container">
-                    <app-apex-chart  [chartOptions]="smallLineChart"></app-apex-chart>
-                    </div>
-                </div>
-                <div class="item card col">
-                    <div class="title-container">
-                        <span class="title">لورم ایپسوم متن ساختگی</span>
-                        <span class="description">لورم ایپسوم</span>
-                    </div>
-                    <div class="chart-container">
-                    <app-apex-chart [chartOptions]="smallBarChart"></app-apex-chart>
-                    </div>
-                </div>
-                <div class="item card col">
-                    <div class="title-container">
-                        <span class="title">لورم ایپسوم متن ساختگی</span>
-                        <span class="description">لورم ایپسوم</span>
-                    </div>
-                    <div class="chart-container">
-                        <app-chartjs [width]="40" [chartType]="'doughnut'" [chartjsOptions]="smallPieChart"></app-chartjs>
-                    </div>
-                </div>
+                </app-card>
+            </div>
             </div>
     </div>
     <div class="box-1">
-        <app-card [cardTitle]="'میزان فروش'" [showSearchIcon]="false">
-            <app-apex-chart [chartOptions]="barChartOption"></app-apex-chart>
+        <app-card [cardTitle]="'تحلیل پروژه'" [showSearchIcon]="false" [actionMenuType]="'expandable'">
+            <app-apex-chart [chartOptions]="barChartBackgroundOption"></app-apex-chart>
         </app-card>
+        
     </div>
     <div class="box-2">
         <app-card [cardTitle]="'آخرین نظرسنجی'" [showSearchIcon]="false">
@@ -60,17 +81,32 @@
     </div>
     <div class="box-3">
         
-        
+        <app-card [cardTitle]="'مهم‌ترین ویژگی‌های قالب'" [showSearchIcon]="false">
+             <ul class="features">
+                <li>استفاده از کامپوننت‌های قابل شخصی‌سازی جهت بالا بردن سرعت توسعه و جلوگیری از تکرار</li>
+                <li>طراحی کامپوننت تقویم شمسی</li>
+                <li>استفاده از فونت‌های مدرن مانند پیدا، کلمه و ...</li>
+                <li>تعریف آیکن‌های مدرن svg و استفاده فقط با یک خط کد</li>
+                <li>استفاده از فریم ورک بوت استرپ جهت پیاده‌سازی طراحی واکنش‌گرا و کامپوننت‌های آماده آن</li>
+                <li>استفاده از چارت‌های apexChart و chartjs</li>
+             </ul>
+        </app-card>
     </div>
     <div class="box-4">
         <app-card [showHeader]="false">
+           
             <app-persian-calendar [primaryColor]="'var(--primary)'" [secondaryColor]="'var(--secondary)'" [days]="calendarData.D140403" [showBody]="true" [dayNamesType]="'short'" (yearAndMonthFilterEmitter)="onNavigateToDate($event)" [isLoading]="calendarLoadingData"></app-persian-calendar>
         </app-card>
     </div>
     
     <div class="box-5">
-        <app-card [actionMenuType]="'expandable'" [showSearchIcon]="false" [background]="'primary'" [backgroundType]="'highlight'" [cardTitle]="'کاربر برتر'">
-            <app-apex-chart [chartOptions]="chartPrimary"></app-apex-chart>
+        <app-card [showSearchIcon]="false">
+            <h4>همین حالا از این قالب به طور رایگان استفاده کنید</h4>
+            <h6 class="description">جهت مشاهده مثال‌های گوناگون نحوه استفاده از componentها، serviceها و .... 
+                <br />
+                به صفحه نمونه‌ها مراجعه کنید.
+            </h6>
+            <button class="btn btn-xl btn-primary mt-4" routerLink="/sample">ورود به صفحه نمونه‌ها<app-svg-icon [name]="'alt-arrow-left'"></app-svg-icon></button>
         </app-card>
     </div>
     <div class="box-6">
@@ -81,17 +117,16 @@
         
     </div>
     <div class="box-7">
-        <app-card [showSearchIcon]="false">
-            <h4>همین حالا از این قالب به طور رایگان استفاده کنید</h4>
-            <h6 class="description">جهت مشاهده مثال‌های گوناگون نحوه استفاده از componentها، serviceها و .... 
-                <br />
-                به صفحه مثال‌ها مراجعه کنید.
-            </h6>
-            <button class="btn btn-xl btn-primary"><app-svg-icon [name]="'alt-arrow-left'"></app-svg-icon>ورود به صفحه نمونه‌ها</button>
+        <app-card [actionMenuType]="'expandable'" [showSearchIcon]="false" [background]="'primary'" [backgroundType]="'highlight'" [cardTitle]="'کاربر برتر'">
+            <app-apex-chart [chartOptions]="chartPrimary"></app-apex-chart>
         </app-card>
+        
     </div>
 </div>
 
+<!-- <app-card [cardTitle]="'میزان فروش'" [showSearchIcon]="false">
+            <app-apex-chart [chartOptions]="barChartOption"></app-apex-chart>
+        </app-card> -->
 <!-- <div class="container-fluid p-0">
     <div class="row g-2">
         <div class="col-12">

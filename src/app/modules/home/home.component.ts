@@ -28,6 +28,60 @@ export class HomeComponent {
     this.cookieService.set('token','123')
   }
 
+  barChartBackgroundOption: ApexChartOptions = {
+    ...BaseApexChartOptions,
+    series: [
+      // { name: 'تعداد تسک انجام شده', data: [70,50,30,100,200,80,40] },
+      { name: 'شنبه', data: [ 90, null, null, null, null, null, null] },
+      { name: 'یکشنبه', data: [null, 50, null, null, null, null, null] },
+      { name: 'دوشنبه', data: [null, null, 80, null, null, null, null] },
+      { name: 'سه شنبه', data: [null, null, null, 60, null, null, null] },
+      { name: 'چهارشنبه', data: [null, null, null, null, 70, null, null] },
+      { name: 'پنجشنبه', data: [null, null, null, null, null, 150, null] },
+      { name: 'جمعه', data: [null, null, null, null, null, null, 200] }
+    ],
+    chart: {
+      ...BaseApexChartOptions.chart,
+      width: '100%',
+      stacked:true
+    },
+    plotOptions: {
+      bar: {
+        ...BaseApexChartOptions.plotOptions.bar,
+        columnWidth: '70%',
+        rangeBarOverlap: false,
+        borderRadius: 15,
+        distributed: true,
+        dataLabels: {
+          ...BaseApexChartOptions.plotOptions.bar?.dataLabels,
+          position: 'top',         
+        }
+        
+      }
+    },
+    colors: ['var(--primary)','var(--primary-20)','var(--primaryLight)','var(--primary-80)', 'var(--primary)','var(--primary)','var(--primary)'],
+    stroke: {
+      show: false,
+      width:5
+    },
+    labels:['شنبه','یکشنبه','دوشنبه','سه شنبه','چهارشنبه', 'پنجشنبه', 'جمعه'],
+    fill: {
+      type: ['pattern','solid','solid','solid','pattern','pattern','pattern'],
+      pattern: {
+        style: 'horizontalLines',
+        width: 3,
+        height: 5,
+        strokeWidth: 1,
+      },
+    },
+    dataLabels: {
+      ...BaseApexChartOptions.dataLabels,
+      offsetY: -15
+    }
+   
+    
+
+  }
   barChartOption: ApexChartOptions = {
     ...BaseApexChartOptions,
     series: [
@@ -46,7 +100,8 @@ export class HomeComponent {
     ],
     chart: {
       ...BaseApexChartOptions.chart,
-      height: 'auto'
+      height: 'auto',
+      width: '100%'
     },
     labels: ['سری اول', 'سری دوم', 'سری سوم'],
     legend: {
@@ -79,7 +134,7 @@ export class HomeComponent {
     }],
     chart: {
       ...BaseApexChartOptions.chart,
-      height: '80px',
+      height: 'auto',
       width: 130
     },
     plotOptions: {
@@ -183,8 +238,8 @@ export class HomeComponent {
     chart: {
       ...BaseApexChartOptions.chart,
       type: 'line',
-      height: 80,
-      width: 150
+      height: 'auto',
+      width: '150px'
     },
     grid: {
       show: false,

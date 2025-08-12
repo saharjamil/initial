@@ -36,8 +36,9 @@ export class ExploreTabComponent {
   onResize(){
     this.checkDevice();
   }
-  
+  isFirstInit: boolean = true;
   ngOnInit(): void {  
+
 
     this.checkDevice();
     if (!this.key) {
@@ -86,6 +87,7 @@ export class ExploreTabComponent {
 
   onSelectTab(tab: ITab) {
     this.showTabsListFlag = false;
+    
     this.tabsService.selectTab(this.key, tab, this.tabContentViewContainerRef);
     setTimeout(() => {
       this.scrollTabIntoView(tab)
@@ -93,10 +95,14 @@ export class ExploreTabComponent {
   }
   addTab(tab: ITab) {
     this.tabsService.selectTab(this.key, tab, this.tabContentViewContainerRef);
-     // Wait a tick for DOM to render the tab
-  setTimeout(() => {
-    this.scrollTabIntoView(tab)
-  }, 100);
+    // Wait a tick for DOM to render the tab
+    if (!this.isFirstInit) {
+      setTimeout(() => {
+        this.scrollTabIntoView(tab)
+      }, 100);
+    }
+    this.isFirstInit = false
+    
   }
   showTabsListPanel(event: MouseEvent) {
     

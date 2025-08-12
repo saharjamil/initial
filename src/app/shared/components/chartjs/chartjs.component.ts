@@ -38,6 +38,7 @@ export class ChartjsComponent {
       // Trigger chart update if already initialized
       if (this.chart) {
         this.chart.update();
+        
       }
     }
   }
@@ -53,5 +54,9 @@ export class ChartjsComponent {
     const activeElements = event.active as ActiveElement[] | undefined;
     this.chartHoverEvent.emit(activeElements);
   }
+
+  
+
+
 
 }

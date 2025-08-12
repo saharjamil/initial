@@ -1,3 +1,4 @@
+import { style } from "@angular/animations";
 import { ApexChartOptions } from "../types/apex-chart-option";
 
 export const BaseApexChartOptions: ApexChartOptions = {
@@ -5,6 +6,7 @@ export const BaseApexChartOptions: ApexChartOptions = {
   chart: {
     type: "bar",
     height: '400px',
+    // width: '100%',
     stacked: false,
     redrawOnWindowResize: true,
     redrawOnParentResize: true,
@@ -138,7 +140,25 @@ export const BaseApexChartOptions: ApexChartOptions = {
   title: {},
   theme: {},
   markers: {},
-  responsive: [],
+  responsive: [
+    {
+      breakpoint: 575,
+      options: {
+        xaxis: {
+          offsetY: 30,
+          offsetX:-30,
+          labels: {
+            rotate: -45
+            
+          },
+          style: {
+            
+          }
+          
+        }
+      }
+    }
+  ],
   fill: {},
   labels: [],
   subtitle: {},
