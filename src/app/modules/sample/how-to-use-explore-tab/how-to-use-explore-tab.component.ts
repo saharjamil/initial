@@ -14,7 +14,7 @@ export class HowToUseExploreTabComponent {
     {
       id: 'ticketList',
       title: 'لیست',
-      icon: 'fileText',
+      icon: 'file-text',
       active: true,
       componentRef: SampleListComponent,
       data: {},

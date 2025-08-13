@@ -10,7 +10,7 @@ export class ButtonComponent {
   @Input() label: string = '';
   @Input() type: "submit" | 'button' = 'button'
   @Input() buttonSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' = 'md';
-  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error'  = 'primary';
+  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'gray'  = 'primary';
   @Input() colorMode: 'solid' | 'highlight' | 'outline' = 'solid';
   @Input() iconName: string = 'check-circle';
   @Input() iconSize: number = 24;

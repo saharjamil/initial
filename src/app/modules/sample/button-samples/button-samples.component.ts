@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './button-samples.component.scss'
 })
 export class ButtonSamplesComponent {
-  @Input() buttonColor: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error'  = 'primary';
+  @Input() buttonColor: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'gray'  = 'primary';
 }

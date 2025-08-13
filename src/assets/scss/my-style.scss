@@ -773,7 +773,7 @@ i{
 
 .btn-gray {
   background-color: var(--gray-light-60) !important;
-  border-color: var(--gray-light-60) !important;
+  border-color: var(--gray-light-80) !important;
 
   &:hover {
     background-color: var(--gray-light-80) !important;
@@ -805,7 +805,7 @@ i{
   }
 }
 .btn-highlight-gray {
-  background-color: var(--gray-light-20) !important;
+  background-color: var(--gray-light-30) !important;
   border-color:  var(--gray-light-100) !important;
 
   &:hover {
@@ -957,6 +957,22 @@ i{
   background-color: var(--warningLight);
   border-color: var(--warning-50) !important;
   color: var(--warning-100);
+}
+
+.badge-gray {
+  background-color: var(--gray-light-60);
+  color: var(--nutral-60);
+}
+
+.badge-highlight-gray {
+  background-color: var(--gray-light-30);
+  color: var(--nutral-60);
+}
+
+.badge-outline-gray {
+  background-color: var(--gray-light-30);
+  border-color: var(--gray-light-100) !important;
+  color: var(--nutral-60);
 }
 
 //======================== Disabled ==================================
@@ -1955,6 +1971,14 @@ table.custom-table-style {
 .custom-apex-chart-xaxis-style{
     tspan{
         direction: rtl;
+    }
+}
+.custom-apex-chart-style{
+    .apexcharts-legend{
+        flex-direction: row-reverse;
+        .apexcharts-legend-series{
+            flex-direction: row-reverse;
+        }
     }
 }
 

@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './badge-sample.component.scss'
 })
 export class BadgeSampleComponent {
-  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' = 'primary'; 
+  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'gray' = 'primary'; 
 }

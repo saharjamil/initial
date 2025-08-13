@@ -87,6 +87,9 @@ export const BaseApexChartOptions: ApexChartOptions = {
         cssClass: 'custom-apex-chart-xaxis-style',
       },
     },
+    tooltip: {
+      enabled:false
+    }
 
   },
   yaxis: {
@@ -115,7 +118,7 @@ export const BaseApexChartOptions: ApexChartOptions = {
     fontSize: "14px",
     fontWeight: 500,
     labels: { colors: "var(--nutral-50)" },
-    markers: { strokeWidth: 3, shape:'circle'  },
+    markers: {  offsetX: 8, shape:'circle', strokeWidth: 0 },
     itemMargin: { horizontal: 10 },
   },
   tooltip: {

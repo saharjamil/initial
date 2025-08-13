@@ -36,12 +36,13 @@ export const BaseChartjsOption: ChartjsOption = {
                 position: 'bottom',
                 // maxHeight:10,
                 labels: {
-                    // pointStyle: 'rect',
-                    // usePointStyle: true,
-                    // pointStyleWidth: 20,
+                    pointStyle: 'circle',
+                    usePointStyle: true,
+                    // pointStyleWidth: 10,
                     color: '#404040',
-                    boxWidth: 25,
-                    boxHeight: 8,
+                    // boxWidth: 25,
+                    boxHeight: 10,
+                    // boxWidth: 3,
                     font: {
                         family: fontFamily,
                         size: 14,
@@ -50,6 +51,7 @@ export const BaseChartjsOption: ChartjsOption = {
                     }
                     
                 }
+
             }
         },
         elements: {

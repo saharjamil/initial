@@ -2,7 +2,7 @@
 <div class="py-3">
     <div class="container-fluid">
         <div class="row g-2">
-            <div class="col-lg-8">
+            <div class="col-12">
                 <div class="card h-100">
                     <div class="card-header">Buttons</div>
                     <div class="card-body">
@@ -12,17 +12,24 @@
                         <app-button-samples [buttonColor]="'warning'"></app-button-samples>
                         <app-button-samples [buttonColor]="'error'"></app-button-samples>
                         <app-button-samples [buttonColor]="'success'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'gray'"></app-button-samples>
                     </div>
                 </div>               
             </div>
-            <div class="col-lg-4">
+            
+            <div class="col-xl-6">
                 <div class="card mb-2">
-                    <div class="card-header">Tab</div>
-                    <div class="card-body p-0">
-                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="verticalStepperItems" [verticalItems]="true"></app-stepper>
-                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="stepperItems"></app-stepper>
+                    <div class="card-header">Badges</div>
+                    <div class="card-body">
+                        <app-badge-sample></app-badge-sample>
+                        <app-badge-sample [color]="'secondary'"></app-badge-sample>
+                        <app-badge-sample [color]="'info'"></app-badge-sample>
+                        <app-badge-sample [color]="'error'"></app-badge-sample>
+                        <app-badge-sample [color]="'warning'"></app-badge-sample>
+                        <app-badge-sample [color]="'success'"></app-badge-sample>
+                        <app-badge-sample [color]="'gray'"></app-badge-sample>
                     </div>
-                </div>  
+                </div>
                 <app-how-to-use-explore-tab></app-how-to-use-explore-tab>
                 <div class="card mt-2">
                     <div class="card-header">Context Menu</div>
@@ -53,39 +60,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-xl-3">
                 <div class="card mb-2">
-                    <div class="card-header">Badges</div>
-                    <div class="card-body">
-                        <app-badge-sample></app-badge-sample>
-                        <app-badge-sample [color]="'secondary'"></app-badge-sample>
-                        <app-badge-sample [color]="'info'"></app-badge-sample>
-                        <app-badge-sample [color]="'error'"></app-badge-sample>
-                        <app-badge-sample [color]="'warning'"></app-badge-sample>
-                        <app-badge-sample [color]="'success'"></app-badge-sample>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col-lg-6">
-                <div class="mb-2">
-
-                    <app-card  [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" (data)='1' (onSearch)="onSearch($event)" [cardTitleIcon]="'users-group-rounded'" >
-                        <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
-                    </app-card>
-                </div>
-                <app-card [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" [showPageNumber]="true" [pageNumber]="20" (data)='1' (onSearch)="onSearch($event)" [actionMenuType]="'button'">
-                    <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
-                </app-card>
-            </div>
-            
-            <div class="col-lg-5">
-                <div class="card">
                     <div class="card-header">Form</div>
                     <div class="card-body">
                         <form #form="ngForm" (ngSubmit)="submitForm(form)">
-                            <div class="row gx-2">
-                                <div class="col-lg-6">
+                            <div class="row g-2">
+                                <div class="col-md-6 col-xl-12">
                                     <div class="form-group animated-label form-group-xs mb-2">
                                         <div class="icon-container">
                                             <app-svg-icon [name]="'document-text'" [size]="20"></app-svg-icon>
@@ -155,7 +136,7 @@
                                         <input id="sample12" name="sample12" class="form-control" placeholder="لورم ایپسوم" />
                                     </div>  
                                 </div>
-                                 <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <ng-select class="custom-select-style selection-xs mb-2" [multiple]="true"
                                         [items]="ngSelectData" bindValue="ID" bindLabel="Title"
                                         markFirst="false" notFoundText="داده‌ای یافت نشد"
@@ -247,7 +228,7 @@
                                             <label class="form-label" for="sample17">لورم ایپسوم</label>
                                         </div>
                                     </div>
-                                    <div class="d-flex align-items-center gap-2 my-3">
+                                    <div class="d-flex align-items-center flex-wrap gap-2 my-3">
                                         <app-switcher name="switcher1" [(ngModel)]='switcher1'></app-switcher>
                                         <app-switcher [type]="'secondary'" name="switcher2" [(ngModel)]='switcher2'></app-switcher>
                                         <app-switcher [type]="'success'" name="switcher3" [(ngModel)]='switcher3'></app-switcher>
@@ -288,44 +269,45 @@
                         </form>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-lg-5">
-                <div class="card h-100">
+            <div class="col-xl-3">
+                <div class="card">
                     <div class="card-header">Form Validation</div>
                     <div class="card-body">
                         <form #sampleForm="ngForm">
                             <div class="row gx-2 gy-3">
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="name" [(ngModel)]="sampleFormInputNgModels.Name" [iconName]="'user-rounded'" [label]="'فقط فارسی'" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                 <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="familyName" [(ngModel)]="sampleFormInputNgModels.FamilyName" [iconName]="'user-rounded'" [label]="'فقط فارسی (اختیاری)'" [required]="false" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-jalali-date-picker [formControl]="datePickerInput7" [submitted]="sampleForm.submitted"></app-jalali-date-picker>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-jalali-date-picker [formControl]="datePickerInput8" [submitted]="sampleForm.submitted" [label]="'تاریخ با لیبل دلخواه'"></app-jalali-date-picker>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="cellphone" [(ngModel)]="sampleFormInputNgModels.CellPhone" [iconName]="'smart-phone'" [label]="'شماره همراه'" [maskType]="'cellphone'" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="email" [(ngModel)]="sampleFormInputNgModels.Email"  [iconName]="'letter'" [label]="'پست الکترونیک'" [maskType]="'email'" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="ipAddress" [(ngModel)]="sampleFormInputNgModels.IP"  [iconName]="'document'" [label]="'آدرس IP'" [maskType]="'IP'" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="notRequired" [label]="'فیلد اختیاری'" [iconName]="'document'" [isRequired]="false" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="notAnimatedLabel" [label]="'لیبل ثابت'" [animatedLabel]="false" [submitted]="sampleForm.submitted"></app-text-input>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-jalali-date-picker [formControl]="datePickerInput9" [submitted]="sampleForm.submitted" [animatedLabel]="false"></app-jalali-date-picker>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6 col-xl-12">
                                     <app-text-input name="password" [(ngModel)]="sampleFormInputNgModels.Password" [iconName]="'lock-password'" [label]="'رمز عبور'" [maskType]="'password'" [showPasswordStrengthMessages]="true" [submitted]="sampleForm.submitted" ></app-text-input>
                                 </div>
                                 <div class="col-12">
@@ -338,6 +320,34 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                
+                <div class="card mb-2">
+                    <div class="card-header">Tab</div>
+                    <div class="card-body p-0">
+                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="verticalStepperItems" [verticalItems]="true"></app-stepper>
+                    </div>
+                </div>  
+                
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-2">
+                    <div class="card-header">Tab</div>
+                    <div class="card-body p-0">
+                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="stepperItems"></app-stepper>
+                    </div>
+                </div>  
+            </div>
+           <div class="col-lg-10">
+                <div class="mb-2">
+                    <app-card  [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" (data)='1' (onSearch)="onSearch($event)" [cardTitleIcon]="'users-group-rounded'" >
+                        <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
+                    </app-card>
+                </div>
+                <app-card [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" [showPageNumber]="true" [pageNumber]="20" (data)='1' (onSearch)="onSearch($event)" [actionMenuType]="'button'">
+                    <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
+                </app-card>
+           </div>
             <div class="col-lg-2">
                 <div class="card mb-2" *blockUI="'blockUI'">
                     <div class="card-header">BlockUI</div>
@@ -347,7 +357,7 @@
                             <button class="btn btn-highlight-info btn-md" (click)="showBlockUI('در حال بروزرسانی ...')">نمایش BlockUI با متن دلخواه</button>
                             <button class="btn btn-highlight-info btn-md" (click)="showCustomBlockUI()">نمایش BlockUI سفارشی</button>
                         </div>
-                        <div class="mt-3" style="height:200px" *blockUI="'customBlockUi';  template: customBlockUITemplate"></div>
+                        <div class="mt-3" style="height:275px" *blockUI="'customBlockUi';  template: customBlockUITemplate"></div>
                     </div>
                 </div>
                 

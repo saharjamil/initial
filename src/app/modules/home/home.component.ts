@@ -77,6 +77,15 @@ export class HomeComponent {
     dataLabels: {
       ...BaseApexChartOptions.dataLabels,
       offsetY: -15
+    },
+    tooltip: {
+      x: {
+        show:false
+      },
+      style: {
+        fontSize: '1rem',
+        fontFamily:'var(--fontFamily)'
+      }
     }
    
     
@@ -129,7 +138,7 @@ export class HomeComponent {
   smallBarChart: ApexChartOptions = {
     ...BaseApexChartOptions,
     series: [{
-      name: '',
+      name: 'لورم ایپسوم',
       data:[150,200,300,250,230]
     }],
     chart: {
@@ -157,7 +166,14 @@ export class HomeComponent {
       width:0
     },
     tooltip: {
-      enabled:false,
+      // enabled:false,
+      x: {
+        show:false,
+      },
+      style: {
+        ...BaseApexChartOptions.tooltip.style,
+        fontSize: '0.8rem',
+      }
     },
     grid: {
       show: false,
@@ -186,6 +202,7 @@ export class HomeComponent {
     dataLabels: {
       enabled:false
     }
+
   }
   smallPieChart: ChartjsOption = {
     labels: [],
@@ -217,13 +234,7 @@ export class HomeComponent {
           }
         }
       },
-      plugins: {
-        tooltip: {
-          enabled:false
-        },
-        
-
-      },
+      
       datasets: {
         doughnut: {
           borderRadius: 5,
@@ -234,7 +245,7 @@ export class HomeComponent {
   }
   smallLineChart: ApexChartOptions = {
     ...BaseApexChartOptions,
-    series: [{data: [15, 30, 50, 10, 5]}],
+    series: [{name: 'میزان رشد' , data: [15, 30, 50, 10, 5]}],
     chart: {
       ...BaseApexChartOptions.chart,
       type: 'line',
@@ -245,6 +256,7 @@ export class HomeComponent {
       show: false,
     },
     xaxis: {
+      ...BaseApexChartOptions.xaxis,
       tickAmount: 0,
       labels: {
         show: false,
@@ -268,8 +280,28 @@ export class HomeComponent {
     stroke: {
       width: 3,
       curve:'smooth'
+    },
+    tooltip: {
+      style: {
+        ...BaseApexChartOptions.tooltip.style,
+        fontSize: '0.8rem',
+      },
+      x: {
+        show: false
+      },
+      
     }
 
+  }
+  smallAreaChart: ApexChartOptions = {
+    ...BaseApexChartOptions,
+    chart: {
+      ...BaseApexChartOptions.chart,
+      type: 'area',
+      height: 100,
+      width: '100%'
+    },
+    series:[15,30]
   }
 
   chartjsBarChart: ChartjsOption = {
@@ -287,21 +319,21 @@ export class HomeComponent {
     configuration: [
       {
          
-        label: 'Votes',
+        label: 'امتیاز',
         data: [12, 19, 3, 5],
         backgroundColor: [
           "#667F66",
-    "#faa719",
-    "#4E79A7", // Blue
-    "#76B7B2", // Teal
-    "#EDC948", // Yellow
-    "#BAB0AC" , // Gray
-    "#59A14F", // Green
-    "#F28E2B", // Orange
-    "#E15759", // Reda
-    "#B07AA1", // Purple
-    "#FF9DA7", // Pink
-    "#9C755F", // Brown
+          "#faa719",
+          "#4E79A7", // Blue
+          "#76B7B2", // Teal
+          "#EDC948", // Yellow
+          "#BAB0AC" , // Gray
+          "#59A14F", // Green
+          "#F28E2B", // Orange
+          "#E15759", // Reda
+          "#B07AA1", // Purple
+          "#FF9DA7", // Pink
+          "#9C755F", // Brown
         ], 
       }
     ],
@@ -366,14 +398,7 @@ export class HomeComponent {
       show: false,
       tickAmount: 3,
     },
-    legend: {
-      ...BaseApexChartOptions.legend,
-      markers: {
-        ...BaseApexChartOptions.legend.markers,
-        strokeWidth: 3
-
-        }
-    }
+    
     
     
   }

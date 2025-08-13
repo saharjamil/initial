@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BadgeComponent {
   @Input() label: string = '';
-  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' = 'primary';
+  @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'gray' = 'primary';
   @Input() colorMode: 'solid' | 'highlight' | 'outline' = 'highlight';
   @Input() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' = 'xs';
   @Input() iconName: string = 'check-circle';
