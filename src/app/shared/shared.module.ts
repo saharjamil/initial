@@ -51,6 +51,8 @@ import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
 import { ApexChartComponent } from './components/apex-chart/apex-chart.component';
 import { ChartjsComponent } from './components/chartjs/chartjs.component';
+import { ButtonComponent } from './components/button/button.component';
+import { BadgeComponent } from './components/badge/badge.component';
 @NgModule({
   declarations: [
     PersianCalendarComponent,
@@ -72,7 +74,9 @@ import { ChartjsComponent } from './components/chartjs/chartjs.component';
     SidebarComponent,
     HeaderComponent,
     ApexChartComponent,
-    ChartjsComponent
+    ChartjsComponent,
+    ButtonComponent,
+    BadgeComponent
   ],
   imports: [
     NgbModule,
@@ -141,7 +145,9 @@ import { ChartjsComponent } from './components/chartjs/chartjs.component';
     CardComponent,
     SearchComponent,
     ApexChartComponent,
-    ChartjsComponent
+    ChartjsComponent,
+    ButtonComponent,
+    BadgeComponent
   ],
   providers:[CookieService, provideCharts(withDefaultRegisterables())]
   

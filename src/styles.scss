@@ -55,7 +55,7 @@
   --secondary-80: #F37E00;
   --secondary-90: #EC6E00;
   --secondary-100: #E45401;
-  --onSecondary: #fff;
+  --onSecondary: var(--nutral-80);
   --secondaryHover: var(--secondary-70);
   --onSecondaryHover: #fff;
   --secondaryActive: var(--secondary-80);
@@ -134,7 +134,7 @@
   --warning-80: #e4bc2e; //TODO :: isEdited
   --warning-90: #dbb52c; //TODO :: isEdited
   --warning-100: #d1ad2c; //TODO :: isEdited
-  --onWarning: #fff;
+  --onWarning: var(--nutral-80);
   --warningHover: var(--warning-70);
   --onWarningHover: var(--nutral-60);
   --warningActive: var(--warning-80);

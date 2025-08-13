@@ -348,7 +348,7 @@ i{
     }
 }
 .btn {
-  border: 1px solid;
+  border: 1px solid transparent;
   transition: var(--transition);
   box-shadow: none;
   outline: none;
@@ -361,6 +361,9 @@ i{
       background-color: var(--primaryDisabled);
       color: var(--onPrimaryDisabled);
       
+  }
+  &.no-transition{
+    transition:none;
   }
 }
 .btn-icon {
@@ -427,7 +430,7 @@ i{
 }
 .btn-xxl{
   border-radius: var(--borderRadiusXXL);
-  padding: var(--paddingXL) var(--paddingXXL);
+  padding: var(--paddingXXL) var(--paddingXXXL);
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.3;
@@ -870,7 +873,7 @@ i{
   color: var(--primary);
 }
 
-.badge-highlight-outline-primary {
+.badge-outline-primary {
   background-color: var(--primaryLight);
   border-color: var(--primary-20) !important;
   color: var(--primary);
@@ -886,7 +889,7 @@ i{
   color: var(--secondary);
 }
 
-.badge-highlight-outline-secondary {
+.badge-outline-secondary {
   background-color: var(--secondaryLight);
   border-color: var(--secondary-20) !important;
   color: var(--secondary);
@@ -902,7 +905,7 @@ i{
   color: var(--info);
 }
 
-.badge-highlight-outline-info {
+.badge-outline-info {
   background-color: var(--infoLight);
   border-color: var(--info-20) !important;
   color: var(--info);
@@ -918,7 +921,7 @@ i{
   color: var(--success);
 }
 
-.badge-highlight-outline-success {
+.badge-outline-success {
   background-color: var(--successLight);
   border-color: var(--success-20) !important;
   color: var(--success);
@@ -934,7 +937,7 @@ i{
   color: var(--error);
 }
 
-.badge-highlight-outline-error {
+.badge-outline-error {
   background-color: var(--errorLight);
   border-color: var(--error-20) !important;
   color: var(--error);
@@ -950,7 +953,7 @@ i{
   color: var(--warning-100);
 }
 
-.badge-highlight-outline-warning {
+.badge-outline-warning {
   background-color: var(--warningLight);
   border-color: var(--warning-50) !important;
   color: var(--warning-100);

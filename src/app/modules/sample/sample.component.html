@@ -2,582 +2,33 @@
 <div class="py-3">
     <div class="container-fluid">
         <div class="row g-2">
-            <app-card [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" (data)='1' (onSearch)="onSearch($event)" [cardTitleIcon]="'users-group-rounded'" >
-                <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
-            </app-card>
-            <app-card [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" [showPageNumber]="true" [pageNumber]="20" (data)='1' (onSearch)="onSearch($event)" [actionMenuType]="'button'">
-                <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
-            </app-card>
-            <div class="col-12">
-                <app-how-to-use-explore-tab></app-how-to-use-explore-tab>
-                <!-- <div class="card">
-                    <div class="card-header">Explore New Tab</div>
-                    <div class="card-body">
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-12">
-                <div class="card">
+            <div class="col-lg-8">
+                <div class="card h-100">
                     <div class="card-header">Buttons</div>
                     <div class="card-body">
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-primary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-xs">
-                                <app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>
-                                لورم ایپسوم متن
-                            </button>
-                            <button class="btn btn-primary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-primary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-primary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-primary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-primary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-primary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-secondary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-secondary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-secondary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-secondary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-secondary btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-secondary btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-info btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-info btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-info btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-info btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-info btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-info btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-error btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-error btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-error btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-error btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-error btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-error btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-warning btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-warning btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-warning btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-sm"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-warning btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-warning btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-warning btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-success btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-success btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-highlight-success btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-highlight-success btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <button class="btn btn-outline-success btn-xs">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-xs"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-sm">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-sm"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-md">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-md"><app-svg-icon [name]="'fire'"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-lg">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-lg"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-xl">لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-xl"><app-svg-icon [name]="'fire'" [size]="28"></app-svg-icon>لورم ایپسوم متن</button>
-                            <button class="btn btn-outline-success btn-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم متن</button>
-                        </div>
+                        <app-button-samples [buttonColor]="'primary'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'secondary'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'info'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'warning'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'error'"></app-button-samples>
+                        <app-button-samples [buttonColor]="'success'"></app-button-samples>
                     </div>
                 </div>               
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-4">
                 <div class="card mb-2">
-                    <div class="card-header">Badges</div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-primary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-primary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-primary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-primary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-primary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-primary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-secondary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-secondary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-secondary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-secondary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-secondary badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-secondary badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-info badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-info badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-info badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-info badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-info badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-info badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-info badge-xxl"><app-svg-icon [name]="'fire'" [size]="30"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-info badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-info badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-info badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-info badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-error badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-error badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-error badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-error badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-error badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-error badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-error badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-error badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-error badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-error badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-error badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-warning badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-warning badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-warning badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-warning badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-warning badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-warning badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-success badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-success badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-success badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-success badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-success badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-success badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-success badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-outline-success badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-outline-success badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
-                        <div class="d-flex align-items-start flex-wrap gap-1 mb-2">
-                            <div class="badge badge-highlight-success badge-xs">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-xs"><app-svg-icon [name]="'fire'" [size]="16"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-sm">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-sm"><app-svg-icon [name]="'fire'" [size]="18"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-md">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-md"><app-svg-icon [name]="'fire'" [size]="20"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-lg">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-lg"><app-svg-icon [name]="'fire'" [size]="22"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-xl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-xl"><app-svg-icon [name]="'fire'" [size]="24"></app-svg-icon>لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-xxl">لورم ایپسوم</div>
-                            <div class="badge badge-highlight-success badge-xxl"><app-svg-icon [name]="'fire'" [size]="26"></app-svg-icon>لورم ایپسوم</div>
-                        </div>
+                    <div class="card-header">Tab</div>
+                    <div class="card-body p-0">
+                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="verticalStepperItems" [verticalItems]="true"></app-stepper>
+                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="stepperItems"></app-stepper>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">SweetAlert</div>
-                    <div class="card-body">
-                        <p>جهت مشاهده پیغام بر روی دکمه‌های مرتبط کلیک کنید</p>
-                        <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
-                            <button class="btn btn-highlight-primary btn-sm"
-                                (click)="fireSuccessSwalPrimaryButton()">پیغام موفقیت با دکمه اولیه</button>
-                            <button class="btn btn-highlight-secondary btn-sm"
-                                (click)="fireSuccessSwalSecondaryButton()">پیغام موفقیت با دکمه ثانویه</button>
-                            <button class="btn btn-highlight-success btn-sm"
-                                (click)="fireSuccessSwalSuccessButton()">پیغام موفقیت با دکمه موفقیت</button>
-                            <button class="btn btn-highlight-info btn-sm"
-                                (click)="fireSuccessSwalInfoButton()">پیغام موفقیت با دکمه اعلان</button>
-                            <button class="btn btn-highlight-error btn-sm"
-                                (click)="fireSuccessSwalErrorButton()">پیغام موفقیت با دکمه خطا</button>
-                            <button class="btn btn-highlight-warning btn-sm"
-                                (click)="fireSuccessSwalWarningButton()">پیغام موفقیت با دکمه هشدار</button>
-                        </div>
-                        <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
-                            <button class="btn btn-highlight-primary btn-sm"
-                                (click)="fireWarningSwalPrimaryButton()">پیغام هشدار با دکمه اولیه</button>
-                            <button class="btn btn-highlight-secondary btn-sm"
-                                (click)="fireWarningSwalSecondaryButton()">پیغام هشدار با دکمه ثانویه</button>
-                            <button class="btn btn-highlight-success btn-sm"
-                                (click)="fireWarningSwalSuccessButton()">پیغام هشدار با دکمه موفقیت</button>
-                            <button class="btn btn-highlight-info btn-sm"
-                                (click)="fireWarningSwalInfoButton()">پیغام هشدار با دکمه اعلان</button>
-                            <button class="btn btn-highlight-error btn-sm"
-                                (click)="fireWarningSwalErrorButton()">پیغام هشدار با دکمه خطا</button>
-                            <button class="btn btn-highlight-warning btn-sm"
-                                (click)="fireWarningSwalWarningButton()">پیغام هشدار با دکمه هشدار</button>
-                        </div>
-                        <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
-                            <button class="btn btn-highlight-primary btn-sm" (click)="firePrimaryToast()">پیغام toast اولیه</button>
-                            <button class="btn btn-highlight-secondary btn-sm" (click)="fireSecondaryToast()">پیغام toast ثانویه</button>
-                            <button class="btn btn-highlight-success btn-sm" (click)="fireSuccessToast()">پیغام toast موفقیت</button>
-                            <button class="btn btn-highlight-info btn-sm" (click)="fireInfoToast()">پیغام toast اعلان</button>
-                            <button class="btn btn-highlight-error btn-sm" (click)="fireErrorToast()">پیغام toast خطا</button>
-                            <button class="btn btn-highlight-warning btn-sm" (click)="fireWarningToast()">پیغام toast هشدار</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="card mb-2" *blockUI="'blockUI'">
-                    <div class="card-header">BlockUI</div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center flex-wrap gap-2">
-                            <button class="btn btn-highlight-info btn-md" (click)="showBlockUI()">نمایش BlockUI پیش فرض</button>
-                            <button class="btn btn-highlight-info btn-md" (click)="showBlockUI('در حال بروزرسانی ...')">نمایش BlockUI با متن دلخواه</button>
-                            <button class="btn btn-highlight-info btn-md" (click)="showCustomBlockUI()">نمایش BlockUI سفارشی</button>
-                        </div>
-                        <div class="mt-3" style="height:300px" *blockUI="'customBlockUi';  template: customBlockUITemplate"></div>
-                    </div>
-                </div>
-                <div class="card mb-2">
+                </div>  
+                <app-how-to-use-explore-tab></app-how-to-use-explore-tab>
+                <div class="card mt-2">
                     <div class="card-header">Context Menu</div>
                     <div class="card-body">
                         <p>جهت مشاهده منو راست کلیک کنید</p>
-                        <div class="d-flex flex-column gap-2">
+                        <div class="d-flex  gap-2">
                             <div appRightClick (rightClick)="onFirstContextMenuRightClick($event)" class="btn btn-outline-primary btn-sm">منو در سمت راست</div>
                             <div appRightClick (rightClick)="onSecondContextMenuRightClick($event)" class="btn btn-outline-primary btn-sm">منو در سمت چپ</div>
                             <div appRightClick (rightClick)="onThirdContextMenuRightClick($event)" class="btn btn-outline-primary btn-sm">منو در پایین</div>
@@ -588,16 +39,7 @@
 
                     </div>
                 </div>
-                <div class="card mb-2">
-                    <div class="card-header">Jalali Calendar</div>
-                    <div class="card-body">
-                        <app-persian-calendar [primaryColor]="'var(--primary)'"
-                            [secondaryColor]="'var(--secondary)'" [days]="calendarData.D140403"
-                            [showBody]="true" [isLoading]="isLoadingCalendarData"
-                            [dayNamesType]="'short'" (yearAndMonthFilterEmitter)="onNavigateToDate($event)" [isLoading]="calendarLoadingData"></app-persian-calendar>
-                    </div>
-                </div>
-                <div class="card">
+                <div class="card mt-2">
                     <div class="card-header">Bullets</div>
                     <div class="card-body">
                         <div class="d-flex align-items-center gap-2">
@@ -612,6 +54,32 @@
                 </div>
             </div>
             <div class="col-lg-6">
+                <div class="card mb-2">
+                    <div class="card-header">Badges</div>
+                    <div class="card-body">
+                        <app-badge-sample></app-badge-sample>
+                        <app-badge-sample [color]="'secondary'"></app-badge-sample>
+                        <app-badge-sample [color]="'info'"></app-badge-sample>
+                        <app-badge-sample [color]="'error'"></app-badge-sample>
+                        <app-badge-sample [color]="'warning'"></app-badge-sample>
+                        <app-badge-sample [color]="'success'"></app-badge-sample>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-2">
+
+                    <app-card  [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" (data)='1' (onSearch)="onSearch($event)" [cardTitleIcon]="'users-group-rounded'" >
+                        <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
+                    </app-card>
+                </div>
+                <app-card [hasFullHeight]="false" [actionMenuItems]="cardActionItems" [cardTitle]="'لورم ایپسوم'" [showPageNumber]="true" [pageNumber]="20" (data)='1' (onSearch)="onSearch($event)" [actionMenuType]="'button'">
+                    <app-table [data]="mockData" [columns]="tableColumns" [mainActions]="secondTableMainActions" [pageSize]="5" (buttonAction)="handleButtonAction($event)"></app-table>
+                </app-card>
+            </div>
+            
+            <div class="col-lg-5">
                 <div class="card">
                     <div class="card-header">Form</div>
                     <div class="card-body">
@@ -622,28 +90,28 @@
                                         <div class="icon-container">
                                             <app-svg-icon [name]="'document-text'" [size]="20"></app-svg-icon>
                                         </div>
-                                        <label class="placeholder-lable form-label" for="sample1">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample1"><span>لورم ایپسوم</span></label>
                                         <input id="sample1" name="sample1" class="form-control" type="text" placeholder="" />
                                     </div>
                                     <div class="form-group animated-label mb-2">
                                         <div class="icon-container">
                                             <app-svg-icon [name]="'document-text'"></app-svg-icon>
                                         </div>
-                                        <label class="placeholder-lable form-label" for="sample2">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample2"><span>لورم ایپسوم</span></label>
                                         <input id="sample2" name="sample2" class="form-control" type="text" placeholder="" />
                                     </div>
                                     <div class="form-group animated-label left-icon form-group-xs mb-2">
                                         <div class="icon-container">
                                             <app-svg-icon [name]="'document-text'" [size]="20"></app-svg-icon>
                                         </div>
-                                        <label class="placeholder-lable form-label" for="sample3">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample3"><span>لورم ایپسوم</span></label>
                                         <input id="sample3" name="sample3" class="form-control" type="text" placeholder="" />
                                     </div>
                                     <div class="form-group animated-label left-icon mb-2">
                                         <div class="icon-container">
                                             <app-svg-icon [name]="'document-text'"></app-svg-icon>
                                         </div>
-                                        <label class="placeholder-lable form-label" for="sample4">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample4"><span>لورم ایپسوم</span></label>
                                         <input id="sample4" name="sample4" class="form-control" type="text" placeholder="" />
                                     </div>
                                     <div class="form-group form-group-xs mb-2">
@@ -671,11 +139,11 @@
                                         <input id="sample8" name="sample6" class="form-control" type="text" placeholder="لورم ایپسوم" />
                                     </div>
                                     <div class="form-group animated-label form-group-xs mb-2">
-                                        <label class="placeholder-lable form-label" for="sample9">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample9"><span>لورم ایپسوم</span></label>
                                         <input id="sample9" name="sample9" type="text" class="form-control" placeholder="" />
                                     </div>
                                     <div class="form-group animated-label mb-2">
-                                        <label class="placeholder-lable form-label" for="sample10">لورم ایپسوم</label>
+                                        <label class="placeholder-lable form-label" for="sample10"><span>لورم ایپسوم</span></label>
                                         <input id="sample10" name="sample10" type="text" class="form-control" placeholder="" />
                                     </div>
                                     <div class="form-label-group form-label-group-xs mb-2">
@@ -821,7 +289,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="card h-100">
                     <div class="card-header">Form Validation</div>
                     <div class="card-body">
@@ -870,16 +338,29 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">Stepper</div>
-                    <div class="card-body p-0">
-                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="verticalStepperItems" [verticalItems]="true"></app-stepper>
-                        <app-stepper *ngIf="stepperItems.length" [stepperItems]="stepperItems"></app-stepper>
-
+            <div class="col-lg-2">
+                <div class="card mb-2" *blockUI="'blockUI'">
+                    <div class="card-header">BlockUI</div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center flex-wrap gap-2">
+                            <button class="btn btn-highlight-info btn-md" (click)="showBlockUI()">نمایش BlockUI پیش فرض</button>
+                            <button class="btn btn-highlight-info btn-md" (click)="showBlockUI('در حال بروزرسانی ...')">نمایش BlockUI با متن دلخواه</button>
+                            <button class="btn btn-highlight-info btn-md" (click)="showCustomBlockUI()">نمایش BlockUI سفارشی</button>
+                        </div>
+                        <div class="mt-3" style="height:200px" *blockUI="'customBlockUi';  template: customBlockUITemplate"></div>
                     </div>
                 </div>
+                
+                <div class="card mb-2">
+                    <div class="card-header">Jalali Calendar</div>
+                    <div class="card-body">
+                        <app-persian-calendar [primaryColor]="'var(--primary)'"
+                            [secondaryColor]="'var(--secondary)'" [days]="calendarData.D140403"
+                            [showBody]="true" [isLoading]="isLoadingCalendarData"
+                            [dayNamesType]="'short'" (yearAndMonthFilterEmitter)="onNavigateToDate($event)" [isLoading]="calendarLoadingData"></app-persian-calendar>
+                    </div>
+                </div>
+                
             </div>
             <div class="col-12">
                 <div class="card">

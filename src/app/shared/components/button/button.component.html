@@ -1,0 +1,4 @@
+<button class="btn btn-{{buttonSize}}" [ngClass]="colorMode === 'solid' ? 'btn-' + color: 'btn-' + colorMode + '-' + color" (click)="onClick($event)" [type]="type" [class.no-transition]="noTransition">
+    <app-svg-icon *ngIf="showIcon" [name]="iconName" [size]="iconSize" [ngClass]="iconDirection == 'right' ? 'order-1' : 'order-2'"></app-svg-icon>
+    <span [ngClass]="iconDirection == 'right' ? 'order-2' : 'order-1'">{{label}}</span>
+</button>

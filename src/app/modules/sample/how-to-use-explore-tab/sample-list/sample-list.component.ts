@@ -4,6 +4,7 @@ import { ExploreTabsService } from '../../../../shared/services/explore-tabs.ser
 import { ITab } from '../../../../core/interfaces/tab.interface';
 import { SampleViewModel } from '../../../../core/viewModels/sample-view-model';
 import { SampleDetailComponent } from '../sample-detail/sample-detail.component';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-sample-list',
@@ -12,6 +13,7 @@ import { SampleDetailComponent } from '../sample-detail/sample-detail.component'
   styleUrl: './sample-list.component.scss'
 })
 export class SampleListComponent {
+  @BlockUI('blockList') blockList!: NgBlockUI;
   ticketList: SampleViewModel[] = [
     {
       "ID": 4178,
@@ -72,6 +74,12 @@ export class SampleListComponent {
   ];
   setting: AppSetting = new AppSetting();
   constructor(private tabsService: ExploreTabsService) { }
+  ngOnInit() {
+    this.blockList.start();
+    setTimeout(() => {
+      this.blockList.stop()
+    },500)
+  }
   onTicketSelected(ticket: SampleViewModel) {
     const tab: ITab = {
       id: ticket.ID.toString(),
