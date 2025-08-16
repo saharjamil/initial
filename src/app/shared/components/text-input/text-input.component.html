@@ -9,7 +9,7 @@
         [name]="inputId"
         class="form-control"
         [type]="maskType === 'password' ? (passwordVisible ? 'text' : 'password') : 'text'"
-        [class.ltr]="maskType == 'cellphone' || maskType == 'email' || maskType == 'IP'"
+        [class.ltr]="maskType == 'cellphone' || maskType == 'email' || maskType == 'IP' || maskType == 'password' || ltrDirection"
         [required]="isRequired"
         [(ngModel)]="value" 
         [placeholder]="placeholder"

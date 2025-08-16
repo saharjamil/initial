@@ -30,6 +30,7 @@ export class TextInputComponent implements ControlValueAccessor {
     'none';
   @Input() isRequired: boolean = true;
   @Input() showPasswordStrengthMessages: boolean = false;
+  @Input() ltrDirection: boolean = false;
 
   inputId: string = '';
   passwordVisible: boolean = false;

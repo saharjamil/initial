@@ -14,6 +14,7 @@ import { ITableActionEvent } from '../../core/interfaces/table-action-event.inte
 
 import { CalendarData } from '../../core/data/calendar-data';
 import { CalendarFilterDateViewModel } from '../../core/viewModels/calendar-filter-date-view-model';
+import { Width } from 'ngx-owl-carousel-o/lib/services/carousel.service';
 @Component({
   selector: 'app-home',
   standalone:false,
@@ -42,8 +43,8 @@ export class HomeComponent {
     ],
     chart: {
       ...BaseApexChartOptions.chart,
-      width: '100%',
-      stacked:true
+      // width: 'calc(100% - 2rem)',
+      stacked: true,
     },
     plotOptions: {
       bar: {
@@ -86,7 +87,18 @@ export class HomeComponent {
         fontSize: '1rem',
         fontFamily:'var(--fontFamily)'
       }
-    }
+    },
+    responsive: [
+      {
+        breakpoint: 400,
+        options: {
+          chart: {
+            width: '95%',
+            height: 350
+          }
+        }
+      }
+    ]
    
     
 
@@ -364,6 +376,8 @@ export class HomeComponent {
           }
         }
       },
+      responsive: false,
+      maintainAspectRatio: false
       
     }
   }

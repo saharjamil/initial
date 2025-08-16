@@ -17,11 +17,18 @@ import { AppSetting } from '../../../core/resources/app-setting';
   animations: [
     trigger('slideDown', [
           state('void', style({
-            height: '0px',
+            height: '0',
+            overflow:'hidden',
+            opcity: 0,
+            visibility: 'hidden'
+
             
           })),
           state('*', style({
             height: '*',
+            overflow:'visible',
+            opcity: 1,
+            visibility: 'visible'
           })),
           transition('void => *', [
             animate('300ms ease-out')

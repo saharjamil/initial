@@ -4,21 +4,21 @@
             <div class="right-side">
                 <div class="form-container">
                     <div class="logo-container d-flex mb-5 align-items-center gap-2">
-                        <img src="../../../../assets/images/logo.png" width="50px" />
+                        <img src="assets/images/logo.png" width="50px" />
                         <div class="title">لــورم ایپســوم مــتن ســـاختگی</div>
                     </div>
-                    <app-text-input name="username" [(ngModel)]="data.username" [iconName]="'user-rounded'" [label]="'نام کاربری'" [persianLettersOnly]="false"></app-text-input>
+                    <app-text-input name="username" [(ngModel)]="data.username" [iconName]="'user-rounded'" [label]="'نام کاربری'" [persianLettersOnly]="false" [ltrDirection]="true"></app-text-input>
                     <app-text-input name="password" [(ngModel)]="data.password" [iconName]="'lock-password'" [label]="'گذرواژه'" [persianLettersOnly]="false" [maskType]="'password'" [showPasswordStrengthMessages]="false"></app-text-input>
-                    <button class="btn btn-md btn-primary mt-5">تایید و ادامه<app-svg-icon [name]="'arrow-left'"></app-svg-icon></button>
+                    <button class="btn btn-md btn-primary mt-5" routerLink="/home">تایید و ادامه<app-svg-icon [name]="'arrow-left'"></app-svg-icon></button>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 d-none d-lg-block">
             <div class="left-side">
-                <owl-carousel-o [options]="owlOption">
+                <owl-carousel-o [options]="owlOption" #owlCarousle>
                     <ng-template carouselSlide>
                         <div class="slider-item">
-                            <img src="../../../../assets/images/slider4.jpg" />
+                            <img src="assets/images/slider4.jpg" />
                             <div class="slider-content">
                                 <div class="title">لورم ایپسوم متن ساختگی</div>
                                 <div class="description">لورم ایپسوم متن ساختگی لورم ایپسوم متن ساختگی لورم ایپسوم متن ساختگی لورم ایپسوم متن ساختگی</div>
@@ -27,7 +27,7 @@
                     </ng-template>
                     <ng-template carouselSlide>
                         <div class="slider-item">
-                            <img src="../../../../assets/images/slider1.jpg" />
+                            <img src="assets/images/slider1.jpg" />
                             <div class="slider-content">
                                 
                             </div>
@@ -35,7 +35,7 @@
                     </ng-template>
                     <ng-template carouselSlide>
                         <div class="slider-item">
-                            <img src="../../../../assets/images/slider2.jpg" />
+                            <img src="assets/images/slider2.jpg" />
                             <div class="slider-content">
                                 
                             </div>
@@ -43,7 +43,7 @@
                     </ng-template>
                     <ng-template carouselSlide>
                         <div class="slider-item">
-                            <img src="../../../../assets/images/slider3.jpg" />
+                            <img src="assets/images/slider3.jpg" />
                             <div class="slider-content">
                                 
                             </div>

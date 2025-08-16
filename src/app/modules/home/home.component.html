@@ -1,6 +1,6 @@
 <div class="grid-container">
     <div class="top">
-        <div class="top-item row g-2 m-0 flex-wrap">
+        <div class="top-item row gx-2 flex-wrap">
             <div class="col-12 col-md-6 col-lg-4 col-xxl">
                 <app-card [showHeader]="false">
                     <div class="item">
@@ -14,7 +14,7 @@
                     </div>
                 </app-card>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl mt-2 mt-lg-0">
                 <app-card [showHeader]="false">
                     <div class="item">
                         <div class="title-container">
@@ -27,7 +27,7 @@
                     </div>
                 </app-card>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl mt-2 mt-lg-0">
                 <app-card [showHeader]="false">
                     <div class="item">
                         <div class="title-container">
@@ -40,7 +40,7 @@
                     </div>
                 </app-card>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl mt-2 mt-xxl-0">
                 <app-card [showHeader]="false">
                     <div class="item">
                         <div class="title-container">
@@ -53,7 +53,7 @@
                     </div>
                 </app-card>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl mt-2 mt-xxl-0">
                 <app-card [showHeader]="false">
                     <div class="item">
                         <div class="title-container">
@@ -66,7 +66,7 @@
                     </div>
                 </app-card>
             </div>
-            </div>
+        </div>
     </div>
     <div class="box-1">
         <app-card [cardTitle]="'تحلیل پروژه'" [showSearchIcon]="false" [actionMenuType]="'expandable'">
@@ -87,16 +87,19 @@
                 <li>طراحی کامپوننت تقویم شمسی</li>
                 <li>استفاده از فونت‌های مدرن مانند پیدا، کلمه و ...</li>
                 <li>تعریف آیکن‌های مدرن svg و استفاده فقط با یک خط کد</li>
-                <li>استفاده از فریم ورک بوت استرپ جهت پیاده‌سازی طراحی واکنش‌گرا و کامپوننت‌های آماده آن</li>
+                <li>استفاده از فریم ورک بوت استرپ جهت پیاده‌سازی طراحی واکنش‌گرا و استفاده از کامپوننت‌های آماده آن</li>
                 <li>استفاده از چارت‌های apexChart و chartjs</li>
              </ul>
         </app-card>
     </div>
-    <div class="box-4">
-        <app-card [showHeader]="false">
-           
+    <div class="box-4  ">
+        <div class="card p-2" style="overflow: hidden;">
+
             <app-persian-calendar [primaryColor]="'var(--primary)'" [secondaryColor]="'var(--secondary)'" [days]="calendarData.D140403" [showBody]="true" [dayNamesType]="'short'" (yearAndMonthFilterEmitter)="onNavigateToDate($event)" [isLoading]="calendarLoadingData"></app-persian-calendar>
-        </app-card>
+        </div>
+        <!-- <app-card [showHeader]="false" [hasFullHeight]="false">
+           
+        </app-card> -->
     </div>
     
     <div class="box-5">

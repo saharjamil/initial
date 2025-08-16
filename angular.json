@@ -44,7 +44,12 @@
               "src/styles.scss"
               
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "shamsi-date-converter",
+              "sweetalert2",
+              "jalali-ts"
+            ]
           },
           "configurations": {
             "production": {
