@@ -89,13 +89,23 @@ export class HomeComponent {
       }
     },
     responsive: [
+    ...BaseApexChartOptions.responsive,
       {
-        breakpoint: 400,
+        
+        breakpoint: 575,
         options: {
           chart: {
-            width: '95%',
+            // width: '95%',
             height: 350
-          }
+          },
+          xaxis: {
+            offsetX:-30,
+            labels: {
+              rotate: -45,
+              // offsetY: 10
+            },  
+          },
+          
         }
       }
     ]

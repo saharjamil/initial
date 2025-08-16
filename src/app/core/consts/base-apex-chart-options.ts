@@ -152,12 +152,12 @@ export const BaseApexChartOptions: ApexChartOptions = {
           offsetX:-30,
           labels: {
             rotate: -45
-            
-          },
-          style: {
-            
+          },          
+        },
+        yaxis: {
+          labels: {
+            show:false
           }
-          
         }
       }
     }
