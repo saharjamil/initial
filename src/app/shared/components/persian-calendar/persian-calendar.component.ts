@@ -19,7 +19,7 @@ import { AppSetting } from '../../../core/resources/app-setting';
           state('void', style({
             height: '0',
             overflow:'hidden',
-            opcity: 0,
+            opacity: 0,
             visibility: 'hidden'
 
             
@@ -27,7 +27,7 @@ import { AppSetting } from '../../../core/resources/app-setting';
           state('*', style({
             height: '*',
             overflow:'visible',
-            opcity: 1,
+            opacity: 1,
             visibility: 'visible'
           })),
           transition('void => *', [

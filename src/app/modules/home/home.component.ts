@@ -87,31 +87,7 @@ export class HomeComponent {
         fontSize: '1rem',
         fontFamily:'var(--fontFamily)'
       }
-    },
-    // responsive: [
-    // ...BaseApexChartOptions.responsive,
-    //   {
-        
-    //     breakpoint: 575,
-    //     options: {
-    //       chart: {
-    //         // width: '95%',
-    //         height: 350
-    //       },
-    //       xaxis: {
-    //         offsetX:-30,
-    //         labels: {
-    //           rotate: -45,
-    //           // offsetY: 10
-    //         },  
-    //       },
-          
-    //     }
-    //   }
-    // ]
-   
-    
-
+    }, 
   }
   barChartOption: ApexChartOptions = {
     ...BaseApexChartOptions,

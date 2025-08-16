@@ -384,6 +384,9 @@ i{
       line-height: 0;
       font-size: 1.1rem;
     }
+    .button-label{
+        display: none;
+    }
   }
 
 //======================== ButtonSizes ==================================
@@ -1251,6 +1254,7 @@ i{
             outline: none !important;
             box-shadow: none !important;
             flex-grow: 1;
+            width: 100%;
         }
         &.valid{
             &:after{
@@ -1264,7 +1268,8 @@ i{
     .datepicker-outer-container{
         position: absolute;
         top: calc(100% + 0.25rem);
-        left: 0;
+        right: 0;
+        left: unset;
         border-radius: var(--borderRadiusMd) !important;
         z-index: 1000;
         .dp-btn{
@@ -1502,6 +1507,10 @@ i{
             top: calc(100% + 1.1rem);
         }
         &:last-child{
+            .datepicker-outer-container{
+                right: unset !important;
+                left: 0 !important
+            }
             .date-picker-input-container{
                 &:before{
                 content: '';
@@ -1514,9 +1523,6 @@ i{
             }
         }
     }
-    
-   
-
 }
 // ********** custom table
 table.custom-table-style {

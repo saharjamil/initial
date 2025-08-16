@@ -63,3 +63,26 @@
 
 }
 
+@media screen and (max-width: 575px) {
+  .custom-timeline{
+    .timeline-item{
+      min-width: unset;
+      padding: var(--paddingSm) !important;
+      gap: var(--gapXs) !important;
+      &:not(.active){
+
+        .timeline-title{
+          display: none;
+        }
+      }
+      &.vertical{
+        flex-direction: row;
+      }
+      .timeline-icon{
+        margin-left: 0;
+      }
+
+    }
+  }
+}
+

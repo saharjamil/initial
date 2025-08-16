@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, INJECTOR, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, INJECTOR, Input, Output, ViewChild } from '@angular/core';
 import { IContextMenuItem } from '../../../core/interfaces/context-menu-item.interface';
 import { HelperService } from '../../services/helper.service';
 import { IExpandablePanelPostion } from '../../../core/interfaces/expandable-panel-position.interface';
@@ -29,9 +29,17 @@ export class CardComponent<T> {
   @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('actionMenuTrigger') actionMenuTrigger!: ElementRef;
   actionMenuPosition: IExpandablePanelPostion = {}
+  isMobile: boolean = false;
   constructor(private helperService:HelperService){}
   showMenu: boolean = false;
-
+  @HostListener('window:resize', ['$event'])
+  
+  onResize() {
+    this.isMobile = window.matchMedia("(max-width: 575px)").matches ? true : false;
+  }
+  ngOnInit() {
+    this.onResize();
+  }
   onShowMenu(event:MouseEvent) {
     this.showMenu = true
     const domRect: DOMRect = this.helperService.calcMouseEventPosition(event);

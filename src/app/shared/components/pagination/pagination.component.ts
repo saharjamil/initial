@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { AppSetting } from '../../../core/resources/app-setting';
 
 @Component({
@@ -14,6 +14,14 @@ export class PaginationComponent {
   @Output() onPaginationChange: EventEmitter<{ pageNumber: number; pageSize: number}> = new EventEmitter();
   setting: AppSetting = new AppSetting();
   isMobile: boolean = false;
+  @HostListener('window:resize', ['$event'])
+  
+  onResize() {
+    this.isMobile = window.matchMedia("(max-width: 575px)").matches ? true : false;
+  }
+  ngOnInit() {
+    this.onResize()
+  }
   pageSizeChanged() {
     this.pageNumber = 1;
     this.emitPaginationChanged();
