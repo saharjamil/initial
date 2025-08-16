@@ -148,7 +148,7 @@ export const BaseApexChartOptions: ApexChartOptions = {
       breakpoint: 575,
       options: {
         xaxis: {
-          offsetY: 30,
+          offsetY: 25,
           offsetX:-20,
           labels: {
             rotate: -45,
